@@ -3,20 +3,23 @@
 <head>
 <meta charset="utf-8">
 <title>Orçamento 2026 · Lais Amaral</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
 <style>
   /* ========= EDITE AQUI: cores oficiais da marca ========= */
   :root{
-    --brown:#644F3B;     /* RGB HEX 644F3B */
-    --rose-l:#D4B8B4;    /* RGB HEX D4B8B4 */
-    --blush:#F6E9E7;     /* RGB HEX F6E9E7 */
-    --rose:#B98E88;      /* rosé um tom mais escuro, para textos */
-    --ink:#3B2F26;
-    --text:#5E5048;
-    --muted:#9A8A82;
-    --line:#E8DAD6;
+    --brown:#1C1C1C;     /* preto da marca · 1C1C1C */
+    --rose-l:#CAABA3;    /* rosé da marca · CAABA3 */
+    --blush:#F6F3F1;     /* off-white da marca · F6F3F1 */
+    --rose:#A8877F;      /* rosé um tom mais escuro, só para textos pequenos */
+    --ink:#1C1C1C;
+    --text:#4A4542;
+    --muted:#8E8682;
+    --line:#E7DFDB;
     --paper:#FFFFFF;
-    --bg:#FBF8F7;
+    --bg:#F6F3F1;
+    /* Fonte principal da marca: Quotesa (se estiver instalada no computador).
+       Sem ela, usa a Italiana, a mais parecida no Google Fonts. */
+    --display:'Quotesa','Italiana',serif;
   }
   *{ box-sizing:border-box; margin:0; padding:0 }
   html,body{ width:1080px }
@@ -27,7 +30,7 @@
     background-size:36px 36px; background-position:-1px -1px;
     padding:70px 70px 60px;
   }
-  .serif{ font-family:'Lora',serif; font-style:italic }
+  .serif{ font-family:var(--display) }
 
   /* ===== janela (assinatura visual) ===== */
   .win{ background:var(--paper); border:1.5px solid var(--brown); border-radius:22px; overflow:hidden; margin-bottom:56px; position:relative }
@@ -44,14 +47,15 @@
 
   /* ===== capa ===== */
   .hero .body{ height:640px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative }
+  .hero .logo{ width:620px; position:relative }
   .hero h1{ font-weight:300; font-size:72px; letter-spacing:.22em; margin-right:-.22em; color:var(--ink) }
   .hero .flower{ margin-top:30px }
   .hero .sub{ margin-top:26px; font-size:16px; letter-spacing:.5em; margin-right:-.5em; text-transform:uppercase; color:var(--muted) }
-  .hero .year{ position:absolute; bottom:44px; left:0; right:0; font-family:'Lora',serif; font-style:italic; font-size:24px; color:var(--brown) }
+  .hero .year{ position:absolute; bottom:44px; left:0; right:0; font-family:var(--display); font-size:24px; color:var(--brown) }
   .hero .arch{ position:absolute; top:-2px; left:50%; transform:translateX(-50%); width:820px; height:560px; border:1.5px solid var(--rose-l); border-top:none; border-radius:0 0 410px 410px }
   .strip{ background:var(--blush); border-top:1.5px solid var(--brown); padding:20px; text-align:center; font-size:17px; letter-spacing:.32em; color:var(--brown) }
 
-  .lead{ font-family:'Lora',serif; font-style:italic; font-size:30px; line-height:1.5; color:var(--brown); margin:22px 0 26px }
+  .lead{ font-family:var(--display); font-size:30px; line-height:1.5; color:var(--brown); margin:22px 0 26px }
 
   /* ===== comparativo ===== */
   table{ width:100%; border-collapse:collapse }
@@ -60,7 +64,7 @@
   .cmp td:first-child{ text-align:left; letter-spacing:.12em; text-transform:uppercase; font-size:14px; color:var(--brown); width:32% }
   .cmp thead th{ height:auto; padding:18px 4px 22px; vertical-align:bottom; border-bottom:1.5px solid var(--brown) }
   .pk{ display:block; font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--brown); font-weight:600 }
-  .pr{ display:block; margin-top:8px; font-family:'Lora',serif; font-size:29px; color:var(--brown); white-space:nowrap }
+  .pr{ display:block; margin-top:8px; font-family:var(--display); font-size:29px; color:var(--brown); white-space:nowrap }
   .pr small{ font-family:'Montserrat'; font-size:12px; color:var(--muted); margin-right:3px }
   s.old{ display:block; margin-top:6px; font-size:13px; color:var(--muted) }
   .hl{ background:var(--blush) }
@@ -68,7 +72,7 @@
   .y{ color:var(--rose); font-size:21px }
   .n{ color:#DDD0CB }
   .t{ font-size:15px !important; color:var(--brown); font-weight:600 }
-  tr.g td{ height:44px; border-bottom:none; padding-top:12px; font-family:'Lora',serif; font-style:italic; text-transform:none !important; letter-spacing:0 !important; font-size:18px !important; color:var(--rose) !important }
+  tr.g td{ height:44px; border-bottom:none; padding-top:12px; font-family:var(--display); text-transform:none !important; letter-spacing:0 !important; font-size:18px !important; color:var(--rose) !important }
   .tag{ display:block; width:fit-content; margin:0 auto 6px; padding:6px 10px; font-size:10px; letter-spacing:.24em; text-transform:uppercase; font-weight:600; color:#fff; background:var(--rose); line-height:1.2 }
   .tag.best{ background:var(--brown) }
   .note{ margin-top:22px; font-size:16px; color:var(--muted); line-height:1.6 }
@@ -76,16 +80,16 @@
 
   /* ===== cards de pacote ===== */
   .pkg .body{ display:grid; grid-template-columns:1fr 270px; gap:44px; padding:50px 60px }
-  .num{ font-family:'Lora',serif; font-style:italic; font-size:20px; color:var(--rose) }
+  .num{ font-family:var(--display); font-size:20px; color:var(--rose) }
   .pkg h3{ font-weight:400; font-size:36px; letter-spacing:.2em; text-transform:uppercase; color:var(--brown); margin:6px 0 12px }
-  .for{ font-family:'Lora',serif; font-style:italic; font-size:21px; line-height:1.5; color:var(--text) }
+  .for{ font-size:18px; line-height:1.6; color:var(--text) }
   .pkg ul{ list-style:none; margin-top:26px; display:grid; grid-template-columns:1fr 1fr; column-gap:24px }
   .pkg li{ font-size:14px; letter-spacing:.1em; text-transform:uppercase; padding:8px 0; color:var(--brown); border-bottom:1px dashed var(--line) }
   .pkg li::before{ content:"✓"; color:var(--rose); margin-right:10px }
   .pkg li.plus{ font-weight:600 }
   .price{ border-left:1px solid var(--line); padding-left:40px; display:flex; flex-direction:column; justify-content:center }
   .was{ font-size:15px; color:var(--muted); text-decoration:line-through; margin-bottom:10px }
-  .v{ font-family:'Lora',serif; font-size:56px; color:var(--brown); line-height:1; white-space:nowrap }
+  .v{ font-family:var(--display); font-size:56px; color:var(--brown); line-height:1; white-space:nowrap }
   .v small{ font-family:'Montserrat'; font-size:17px; vertical-align:top; position:relative; top:6px; margin-right:5px }
   .c{ margin-top:20px; font-size:15px; line-height:1.75; color:var(--muted) }
   .c b{ color:var(--brown); font-weight:600 }
@@ -127,15 +131,16 @@
   .vals{ margin-top:20px }
   .vals th{ font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:500; padding-bottom:14px; border-bottom:1.5px solid var(--brown); text-align:right }
   .vals th:first-child,.vals td:first-child{ text-align:left }
-  .vals td{ height:52px; border-bottom:1px solid var(--line); font-family:'Lora',serif; font-size:19px; color:var(--brown); text-align:right }
+  .vals td{ height:52px; border-bottom:1px solid var(--line); font-family:var(--display); font-size:19px; color:var(--brown); text-align:right }
   .vals td.p{ color:var(--rose) }
   .vals s{ color:var(--muted); font-size:15px; margin-right:8px }
   .mini{ font-family:'Montserrat'; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:#fff; background:var(--brown); padding:4px 8px; margin-left:10px; vertical-align:middle }
 
   /* ===== processo ===== */
   .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:44px 30px; margin-top:44px; text-align:center }
+  .pr,.v,.vals td,.ball,.num{ font-family:'Montserrat',sans-serif !important; font-weight:300 }
   .ball{ width:132px; height:132px; border-radius:50%; background:var(--rose-l); margin:0 auto 20px; display:flex; align-items:center; justify-content:center;
-         font-family:'Lora',serif; font-style:italic; font-size:50px; color:#fff; border:1.5px solid var(--brown) }
+         font-family:var(--display); font-size:50px; color:#fff; border:1.5px solid var(--brown) }
   .steps b{ display:block; font-size:16px; letter-spacing:.18em; text-transform:uppercase; font-weight:600; color:var(--brown) }
   .steps span{ display:block; margin-top:8px; font-size:16px; line-height:1.55; color:var(--text); padding:0 8px }
 
@@ -158,8 +163,7 @@
   <div class="bar">orçamento</div>
   <div class="body">
     <div class="arch"></div>
-    <h1>LAIS AMARAL</h1>
-    <svg class="flower"><use href="#flower"/></svg>
+    <img class="logo" src="marca/logo.png" alt="Lais Amaral">
     <div class="sub">Design de marcas</div>
     <div class="year">proposta 2026</div>
   </div>
@@ -376,7 +380,7 @@
 <div class="win end">
   <div class="bar">vamos começar?</div>
   <div class="body">
-    <svg class="flower" style="color:var(--rose-l);margin-bottom:24px"><use href="#flower"/></svg>
+    <img src="marca/monograma-branco.png" alt="LA" style="height:150px;margin-bottom:40px">
     <div class="serif">Vamos criar a marca<br>que você merece?</div>
     <p>Escolha o seu pacote e me chame — é só responder a esta mensagem.</p>
   </div>
