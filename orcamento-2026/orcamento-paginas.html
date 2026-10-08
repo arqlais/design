@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Orçamento 2026 · Lais Amaral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  /* ========= EDITE AQUI: cores da marca ========= */
+  :root{
+    --rose:#C49F9A;      /* rosé da paleta */
+    --rose-soft:#EAD9D6; /* rosé claro */
+    --brown:#523F33;     /* marrom da paleta */
+    --ink:#2E2420;
+    --muted:#8C7B73;
+    --cream:#F7F2EE;
+    --paper:#FFFFFF;
+    --line:#E4D6D1;
+  }
+  @page{ size:1080px 1350px; margin:0 }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  html,body{ background:#d9d2ce }
+  body{ font-family:'Montserrat',sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact }
+  .page{
+    width:1080px; height:1350px; margin:0 auto 40px; position:relative; overflow:hidden;
+    background:var(--paper); padding:110px 100px 100px;
+    page-break-after:always; break-after:page;
+  }
+  @media print{ html,body{background:none} .page{margin:0} }
+
+  /* tipografia base */
+  .eyebrow{ font-size:15px; letter-spacing:.38em; text-transform:uppercase; color:var(--rose); font-weight:500 }
+  .serif{ font-family:'Lora',serif; font-style:italic }
+  h1,h2{ font-weight:300; letter-spacing:.22em; text-transform:uppercase; color:var(--brown) }
+  h2{ font-size:44px; line-height:1.25; margin-top:22px }
+  p{ font-size:22px; line-height:1.7; color:#5b4c45 }
+  .rule{ width:64px; height:1px; background:var(--rose); margin:36px 0 }
+  .folio{ position:absolute; bottom:56px; left:100px; right:100px; display:flex; justify-content:space-between;
+          font-size:13px; letter-spacing:.3em; text-transform:uppercase; color:var(--muted) }
+  .flower{ width:26px; height:26px; color:var(--rose) }
+
+  /* ===== capa ===== */
+  .cover{ background:var(--cream); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center }
+  .arch{ position:absolute; top:-1px; left:50%; transform:translateX(-50%); width:760px; height:1020px;
+         border:1.5px solid var(--rose); border-top:none; border-radius:0 0 380px 380px; background:var(--paper) }
+  .cover-inner{ position:relative; z-index:1; margin-top:-140px }
+  .cover h1{ font-size:84px; letter-spacing:.24em; margin-right:-.24em }
+  .cover .sub{ margin-top:30px; font-size:17px; letter-spacing:.5em; text-transform:uppercase; color:var(--muted); margin-right:-.5em }
+  .cover .tag{ position:absolute; bottom:150px; left:0; right:0; z-index:1 }
+  .cover .tag .serif{ font-size:40px; color:var(--brown) }
+  .cover .tag .eyebrow{ margin-top:18px; display:block }
+
+  /* ===== intro ===== */
+  .lead{ font-family:'Lora',serif; font-style:italic; font-size:34px; line-height:1.5; color:var(--brown); margin-top:48px; max-width:820px }
+  .glossary{ display:grid; grid-template-columns:1fr 1fr; gap:34px 60px; margin-top:64px }
+  .glossary div{ border-top:1px solid var(--line); padding-top:20px }
+  .glossary b{ display:block; font-size:16px; font-weight:500; letter-spacing:.28em; text-transform:uppercase; color:var(--brown); margin-bottom:10px }
+  .glossary span{ font-size:19px; line-height:1.55; color:#6c5d56 }
+
+  /* ===== comparativo ===== */
+  table{ width:100%; border-collapse:collapse; margin-top:40px }
+  th,td{ text-align:center; padding:0 6px; height:47px; border-bottom:1px solid var(--line); font-size:17px }
+  td:first-child,th:first-child{ text-align:left; padding-left:0; letter-spacing:.14em; text-transform:uppercase; font-size:15px; color:var(--brown); width:34% }
+  thead th{ height:auto; padding:22px 6px 26px; vertical-align:bottom; border-bottom:1.5px solid var(--brown) }
+  thead .pk{ display:block; font-size:14px; letter-spacing:.24em; text-transform:uppercase; color:var(--brown); font-weight:600 }
+  thead .pr{ display:block; margin-top:10px; font-family:'Lora',serif; font-size:30px; color:var(--brown) }
+  thead .pr small{ font-family:'Montserrat'; font-size:13px; letter-spacing:.1em; color:var(--muted); margin-right:4px }
+  .hl{ background:var(--cream) }
+  .yes{ color:var(--rose); font-size:22px }
+  .no{ color:#d6cbc6 }
+  td.txt{ font-size:15px; color:var(--brown); font-weight:500; letter-spacing:.05em }
+  tr.group td{ height:44px; border-bottom:none; padding-top:14px; font-family:'Lora',serif; font-style:italic; text-transform:none; letter-spacing:0; font-size:18px; color:var(--rose) }
+  .note{ margin-top:30px; font-size:16px; line-height:1.6; color:var(--muted) }
+
+  /* ===== pacotes ===== */
+  .pkgs{ display:grid; grid-template-rows:1fr 1fr; gap:40px; margin-top:56px; height:930px }
+  .pkg{ border:1px solid var(--line); border-radius:4px; padding:46px 52px; display:grid; grid-template-columns:1fr 250px; gap:40px; position:relative }
+  .pkg.dark{ background:var(--brown); border-color:var(--brown) }
+  .pkg.dark *{ color:#F3E9E4 }
+  .pkg.dark .eyebrow,.pkg.dark .for{ color:var(--rose-soft) }
+  .pkg .num{ font-family:'Lora',serif; font-style:italic; font-size:20px; color:var(--rose) }
+  .pkg h3{ font-weight:400; font-size:34px; letter-spacing:.2em; text-transform:uppercase; color:var(--brown); margin:10px 0 14px }
+  .pkg .for{ font-family:'Lora',serif; font-style:italic; font-size:21px; line-height:1.5; color:#6c5d56 }
+  .pkg ul{ list-style:none; margin-top:26px; columns:2; column-gap:30px }
+  .pkg li{ font-size:14px; letter-spacing:.1em; white-space:nowrap; text-transform:uppercase; padding:7px 0; color:var(--brown); break-inside:avoid }
+  .pkg li::before{ content:"·"; color:var(--rose); margin-right:10px; font-weight:600 }
+  .pkg li.plus{ font-weight:600 }
+  .price{ border-left:1px solid var(--line); padding-left:40px; display:flex; flex-direction:column; justify-content:center }
+  .pkg.dark .price{ border-color:rgba(255,255,255,.18) }
+  .price .v{ font-family:'Lora',serif; font-size:58px; color:var(--brown); line-height:1 }
+  .price .v small{ font-family:'Montserrat'; font-size:18px; letter-spacing:.1em; vertical-align:top; margin-right:6px; position:relative; top:6px }
+  .price .c{ margin-top:22px; font-size:15px; line-height:1.7; color:var(--muted) }
+  .price .c b{ font-weight:600; color:var(--brown) }
+  .pkg.dark .price .c{ color:#d8c6bf }
+  .badges{ position:absolute; top:-15px; right:52px; display:flex; gap:8px }
+  .chip.best{ background:var(--paper); color:var(--brown) !important; box-shadow:0 0 0 1.5px var(--rose) }
+  .chip.ghost{ background:var(--paper); color:var(--rose) !important; box-shadow:0 0 0 1px var(--rose) }
+  .chip{ background:var(--rose); color:#fff !important; font-size:12px; letter-spacing:.3em; text-transform:uppercase; padding:8px 16px; font-weight:600 }
+  .launch.best{ background:var(--brown) }
+  th.hl{ box-shadow:inset 0 3px 0 var(--brown) }
+  .launch{ display:block; width:fit-content; margin-left:auto; margin-right:auto; background:var(--rose); color:#fff; font-size:10px; letter-spacing:.26em; text-transform:uppercase; padding:6px 10px; line-height:1.2; margin-bottom:6px; font-weight:600 }
+  s.old{ display:block; margin-top:8px; font-size:13px; color:var(--muted); letter-spacing:.05em }
+  .pricing s.old{ display:inline; font-size:15px; margin-right:8px }
+  .pkg.promo{ border:1.5px solid var(--rose) }
+  .pkg.dark .price .was{ color:#cdb8b0 }
+  .price .was{ font-size:15px; letter-spacing:.06em; color:var(--muted); text-decoration:line-through; margin-bottom:12px }
+  .mini{ font-family:'Montserrat'; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--rose); margin-left:8px }
+  .promo-note{ color:var(--brown); font-weight:500 }
+  .price .v{ white-space:nowrap }
+  .extra{ margin-top:22px; padding:18px 22px; background:var(--cream); font-size:16px; line-height:1.6; color:#5b4c45 }
+  .pkg.dark .extra{ background:rgba(255,255,255,.08) }
+
+  /* ===== condições ===== */
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:60px; margin-top:60px }
+  .block h4{ font-size:16px; letter-spacing:.32em; text-transform:uppercase; color:var(--rose); font-weight:500; padding-bottom:16px; border-bottom:1px solid var(--line); margin-bottom:28px }
+  .item{ margin-bottom:34px }
+  .item b{ display:block; font-size:20px; letter-spacing:.12em; text-transform:uppercase; font-weight:500; color:var(--brown) }
+  .item span{ display:block; margin-top:8px; font-size:19px; line-height:1.6; color:#6c5d56 }
+  .pricing{ width:100%; margin-top:6px }
+  .pricing td,.pricing th{ height:52px; font-size:16px }
+  .pricing th{ font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:500; border-bottom:1.5px solid var(--brown) }
+  .pricing td:first-child{ width:auto }
+  .pricing td{ font-family:'Lora',serif; color:var(--brown); font-size:19px }
+  .pricing td.strong{ font-weight:400; color:var(--rose) }
+  .callout{ margin-top:50px; background:var(--cream); padding:34px 40px; display:flex; gap:28px; align-items:center }
+  .callout .serif{ font-size:24px; color:var(--brown); line-height:1.5 }
+
+  /* ===== processo ===== */
+  .steps{ margin-top:70px; position:relative }
+  .steps::before{ content:""; position:absolute; left:39px; top:40px; bottom:40px; width:1px; background:var(--line) }
+  .step{ display:grid; grid-template-columns:80px 1fr; gap:40px; align-items:start; margin-bottom:44px; position:relative }
+  .step .n{ width:80px; height:80px; border-radius:50%; background:var(--cream); border:1px solid var(--rose-soft); display:flex; align-items:center; justify-content:center;
+            font-family:'Lora',serif; font-style:italic; font-size:30px; color:var(--rose) }
+  .step b{ display:block; font-size:21px; letter-spacing:.18em; text-transform:uppercase; font-weight:500; color:var(--brown); margin-top:14px }
+  .step span{ display:block; margin-top:8px; font-size:19px; line-height:1.55; color:#6c5d56 }
+
+  /* ===== encerramento ===== */
+  .end{ background:var(--brown); display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center }
+  .end .serif{ font-size:52px; color:#F3E9E4; line-height:1.35 }
+  .end p{ color:#d8c6bf; margin-top:30px; max-width:640px }
+  .end .contact{ margin-top:80px; display:flex; flex-direction:column; gap:20px }
+  .end .contact a{ color:#F3E9E4; text-decoration:none; font-size:19px; letter-spacing:.28em; text-transform:uppercase }
+  .end .flower{ color:var(--rose); width:34px; height:34px; margin-bottom:46px }
+  .end .folio{ color:rgba(243,233,228,.5) }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="flower" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.1">
+    <circle cx="12" cy="6.5" r="4"/><circle cx="12" cy="17.5" r="4"/><circle cx="6.5" cy="12" r="4"/><circle cx="17.5" cy="12" r="4"/></g></symbol>
+</svg>
+
+<!-- ============ 1 · CAPA ============ -->
+<section class="page cover">
+  <div class="arch"></div>
+  <div class="cover-inner">
+    <h1>Lais Amaral</h1>
+    <svg class="flower" style="margin-top:34px"><use href="#flower"/></svg>
+    <div class="sub">Design de marcas</div>
+  </div>
+  <div class="tag">
+    <div class="serif">Proposta de identidade visual</div>
+    <span class="eyebrow">Orçamento 2026</span>
+  </div>
+</section>
+
+<!-- ============ 2 · INTRODUÇÃO ============ -->
+<section class="page">
+  <span class="eyebrow">Antes de tudo</span>
+  <h2>Afinal, o que é<br>identidade visual?</h2>
+  <p class="lead">É a essência da sua marca: o sentimento que você quer despertar quando alguém olha para ela.</p>
+  <div class="rule"></div>
+  <p>Identidade visual é o conjunto de elementos que representam um nome, produto, empresa ou serviço. Juntos, eles constroem conceito, valor e posicionamento no mercado — e fazem a sua marca ser reconhecida e lembrada.</p>
+  <div class="glossary">
+    <div><b>Logotipo</b><span>A assinatura principal da marca.</span></div>
+    <div><b>Submarca</b><span>Versão alternativa, para espaços e formatos diferentes.</span></div>
+    <div><b>Ícone</b><span>Símbolo compacto: perfil, selo, favicon.</span></div>
+    <div><b>Marcas d’água</b><span>Assinaturas discretas para fotos e posts.</span></div>
+    <div><b>Pattern</b><span>Estampa exclusiva para embalagens e fundos.</span></div>
+    <div><b>Tipografia & cores</b><span>As fontes e a paleta oficiais da marca.</span></div>
+  </div>
+  <div class="folio"><span>Lais Amaral</span><span>02</span></div>
+</section>
+
+<!-- ============ 3 · COMPARATIVO ============ -->
+<section class="page">
+  <span class="eyebrow">Os pacotes</span>
+  <h2>Do essencial<br>ao mais completo</h2>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th><span class="pk">Básico</span><span class="pr"><small>R$</small>240</span></th>
+        <th><span class="pk">Completo</span><span class="pr"><small>R$</small>470</span></th>
+        <th class="hl"><span class="launch best">★ Mais vendido</span><span class="launch">Lançamento</span><span class="pk">Instagram</span><s class="old">R$ 540</s><span class="pr"><small>R$</small>398,90</span></th>
+        <th><span class="pk">Papelaria</span><span class="pr"><small>R$</small>680</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="group"><td colspan="5">Identidade visual</td></tr>
+      <tr><td>Logotipo</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes hl">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Submarca</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes hl">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Ícone</td><td class="no">—</td><td class="yes">✓</td><td class="yes hl">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Marcas d’água</td><td class="txt">6</td><td class="txt">9</td><td class="txt hl">9</td><td class="txt">9</td></tr>
+      <tr><td>Pattern</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes hl">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Tipografia</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes hl">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Paleta de cores</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes hl">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Apresentação da marca</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes hl">✓</td><td class="yes">✓</td></tr>
+      <tr class="group"><td colspan="5">Extras</td></tr>
+      <tr><td>Capas de destaques</td><td class="no">—</td><td class="no">—</td><td class="txt hl">5</td><td class="no">—</td></tr>
+      <tr><td>Molduras post + stories</td><td class="no">—</td><td class="no">—</td><td class="txt hl">2 + 2</td><td class="no">—</td></tr>
+      <tr><td>Arte de papelaria</td><td class="no">—</td><td class="no">—</td><td class="no hl">—</td><td class="yes">✓</td></tr>
+      <tr><td>500 impressos + frete grátis</td><td class="no">—</td><td class="no">—</td><td class="no hl">—</td><td class="yes">✓</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><b class="promo-note">★ Instagram: o mais vendido, em lançamento por tempo e vagas limitadas.</b> Parcele em até 3× sem juros no cartão ou ganhe 5% de desconto no Pix, transferência ou boleto — valores na página 06.</p>
+  <div class="folio"><span>Lais Amaral</span><span>03</span></div>
+</section>
+
+<!-- ============ 4 · PACOTES 1 e 2 ============ -->
+<section class="page">
+  <span class="eyebrow">Em detalhes</span>
+  <h2>Identidade visual</h2>
+  <div class="pkgs">
+    <div class="pkg">
+      <div>
+        <span class="num">01</span>
+        <h3>Básico</h3>
+        <p class="for">Para quem está começando e precisa de uma marca bonita, coerente e pronta para usar.</p>
+        <ul>
+          <li>Logotipo</li><li>Submarca</li><li>6 marcas d’água</li><li>Pattern</li>
+          <li>Tipografia</li><li>Paleta de cores</li><li>Apresentação</li>
+        </ul>
+      </div>
+      <div class="price">
+        <div class="v"><small>R$</small>240</div>
+        <div class="c">ou 3× de <b>R$ 80,00</b><br>Pix: <b>R$ 228,00</b></div>
+      </div>
+    </div>
+    <div class="pkg">
+      <div>
+        <span class="num">02</span>
+        <h3>Completo</h3>
+        <p class="for">A identidade visual inteira, com ícone e mais variações para todos os pontos de contato.</p>
+        <ul>
+          <li>Logotipo</li><li>Submarca</li><li class="plus">Ícone</li><li class="plus">9 marcas d’água</li>
+          <li>Pattern</li><li>Tipografia</li><li>Paleta de cores</li><li>Apresentação</li>
+        </ul>
+      </div>
+      <div class="price">
+        <div class="v"><small>R$</small>470</div>
+        <div class="c">ou 3× de <b>R$ 156,67</b><br>Pix: <b>R$ 446,50</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Lais Amaral</span><span>04</span></div>
+</section>
+
+<!-- ============ 5 · PACOTES 3 e 4 ============ -->
+<section class="page">
+  <span class="eyebrow">Em detalhes</span>
+  <h2>Identidade + extras</h2>
+  <div class="pkgs">
+    <div class="pkg dark">
+      <div class="badges"><span class="chip best">★ Mais vendido</span><span class="chip">Lançamento</span></div>
+      <div>
+        <span class="num">03</span>
+        <h3 style="color:#F3E9E4">Instagram</h3>
+        <p class="for">Tudo do pacote Completo, mais os itens que deixam o seu perfil completinho e atraente.</p>
+        <ul>
+          <li>Identidade completa</li><li class="plus">5 capas de destaques</li>
+          <li class="plus">2 molduras para post</li><li class="plus">2 molduras para stories</li>
+        </ul>
+        <div class="extra">✦ Promoção de lançamento por tempo e vagas limitadas.</div>
+      </div>
+      <div class="price">
+        <div class="was">de R$ 540,00 por</div>
+        <div class="v" style="color:#F3E9E4"><small>R$</small>398,90</div>
+        <div class="c">ou 3× de <b style="color:#fff">R$ 132,97</b><br>Pix: <b style="color:#fff">R$ 378,96</b></div>
+      </div>
+    </div>
+    <div class="pkg">
+      <div class="badges"><span class="chip ghost">Inclui impressão</span></div>
+      <div>
+        <span class="num">04</span>
+        <h3>Papelaria</h3>
+        <p class="for">Tudo do pacote Completo, mais a arte e a impressão do seu material — entregue na sua porta.</p>
+        <ul>
+          <li>Identidade completa</li><li class="plus">Arte de papelaria</li>
+          <li class="plus">500 unidades impressas</li><li class="plus">Frete grátis · Brasil</li>
+        </ul>
+        <div class="extra">Escolha <b>um</b> item: cartão de visita, cartão fidelidade, tags ou adesivos. Tamanho e acabamento padrão — corte especial ou outro acabamento sob consulta.</div>
+      </div>
+      <div class="price">
+        <div class="v"><small>R$</small>680</div>
+        <div class="c">ou 3× de <b>R$ 226,67</b><br>Pix: <b>R$ 646,00</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Lais Amaral</span><span>05</span></div>
+</section>
+
+<!-- ============ 6 · CONDIÇÕES ============ -->
+<section class="page">
+  <span class="eyebrow">Investimento</span>
+  <h2>Pagamento<br>e prazos</h2>
+  <div class="cols">
+    <div class="block">
+      <h4>Pagamento</h4>
+      <div class="item"><b>Cartão de crédito</b><span>Em até 3× sem juros.</span></div>
+      <div class="item"><b>Pix, transferência ou boleto</b><span>5% de desconto à vista.</span></div>
+    </div>
+    <div class="block">
+      <h4>Prazos</h4>
+      <div class="item"><b>Até 12 dias úteis</b><span>Contados após o preenchimento do briefing. Alterações podem estender o prazo.</span></div>
+      <div class="item"><b>Urgência · 5 dias corridos</b><span>Acréscimo de R$ 180,00.</span></div>
+    </div>
+  </div>
+  <table class="pricing">
+    <thead><tr><th style="text-align:left">Pacote</th><th>Valor</th><th>3× sem juros</th><th>Pix (−5%)</th></tr></thead>
+    <tbody>
+      <tr><td>Básico</td><td>R$ 240,00</td><td>R$ 80,00</td><td class="strong">R$ 228,00</td></tr>
+      <tr><td>Completo</td><td>R$ 470,00</td><td>R$ 156,67</td><td class="strong">R$ 446,50</td></tr>
+      <tr><td>Instagram <span class="mini">★ mais vendido</span></td><td><s class="old">R$ 540,00</s> R$ 398,90</td><td>R$ 132,97</td><td class="strong">R$ 378,96</td></tr>
+      <tr><td>Papelaria</td><td>R$ 680,00</td><td>R$ 226,67</td><td class="strong">R$ 646,00</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <svg class="flower" style="flex:none"><use href="#flower"/></svg>
+    <span class="serif">Dias úteis não incluem finais de semana nem feriados.</span>
+  </div>
+  <div class="folio"><span>Lais Amaral</span><span>06</span></div>
+</section>
+
+<!-- ============ 7 · PROCESSO ============ -->
+<section class="page">
+  <span class="eyebrow">Como funciona</span>
+  <h2>Processo criativo</h2>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div><b>Escolha o pacote</b><span>Me conte qual opção faz mais sentido para a sua marca agora.</span></div></div>
+    <div class="step"><div class="n">2</div><div><b>Conheça os termos</b><span>Você recebe e lê os termos do projeto antes de fechar.</span></div></div>
+    <div class="step"><div class="n">3</div><div><b>Pagamento</b><span>Confirmado o pagamento, sua vaga na agenda está garantida.</span></div></div>
+    <div class="step"><div class="n">4</div><div><b>Briefing</b><span>Um questionário sobre a sua marca, público e referências.</span></div></div>
+    <div class="step"><div class="n">5</div><div><b>Criação</b><span>Começo o desenvolvimento — o prazo passa a contar aqui.</span></div></div>
+    <div class="step"><div class="n">6</div><div><b>Entrega</b><span>Sua identidade visual finalizada, com todos os arquivos.</span></div></div>
+  </div>
+  <div class="folio"><span>Lais Amaral</span><span>07</span></div>
+</section>
+
+<!-- ============ 8 · CONTATO ============ -->
+<section class="page end">
+  <svg class="flower"><use href="#flower"/></svg>
+  <div class="serif">Vamos criar a marca<br>que você merece?</div>
+  <p>Escolha o seu pacote e me chame — é só responder a esta mensagem.</p>
+  <div class="contact">
+    <a>@laisamaraldesigner</a>
+    <a>www.laisamaraldesigner.com</a>
+  </div>
+  <div class="folio"><span>Lais Amaral</span><span>08</span></div>
+</section>
+
+</body>
+</html>
