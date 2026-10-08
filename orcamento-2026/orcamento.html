@@ -3,467 +3,357 @@
 <head>
 <meta charset="utf-8">
 <title>Orçamento 2026 · Lais Amaral</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Italiana&display=swap" rel="stylesheet">
 <style>
-  /* =========================================================
-     LAIS AMARAL · PROPOSTA 2026 · layout editorial
-     Paleta: 1C1C1C · CAABA3 · F6F3F1
-     ========================================================= */
-  :root{
-    --black:#1C1C1C;
-    --rose:#CAABA3;
-    --rose-d:#9E7C74;   /* rosé mais fechado, só para textos pequenos */
-    --off:#F6F3F1;
-    --white:#FFFFFF;
-    --grey:#6B6461;
-    --hair:#D9CCC7;
-    /* Quotesa = fonte da marca; sem ela instalada, usa Italiana */
-    --display:'Quotesa','Italiana',serif;
-  }
-  *{ box-sizing:border-box; margin:0; padding:0 }
-  html,body{ width:1080px; background:var(--off) }
-  body{ font-family:'Montserrat',sans-serif; color:var(--black); -webkit-print-color-adjust:exact; print-color-adjust:exact }
-  img{ display:block }
-  .pad{ padding-left:80px; padding-right:80px }
-  .photo{ width:100%; background-size:cover; background-position:center; background-repeat:no-repeat }
-  .label{ font-size:22px; letter-spacing:.42em; text-transform:uppercase; font-weight:500; color:var(--rose-d) }
-  .display{ font-family:var(--display); font-weight:400; line-height:1.02 }
-  .display,.pkg h3,.list .r b,.menu .m b,.t.txt em{ text-transform:lowercase }
-  .menu .m b .st{ text-transform:uppercase }
-  .body{ font-size:31px; line-height:1.6; color:var(--grey) }
-  .num{ font-weight:200; letter-spacing:-.03em }
-  .flor{ width:38px }
-  .ico{ width:42px; height:42px; stroke:var(--rose-d); fill:none; stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; flex:none }
+/* ==========================================================
+   LAIS AMARAL · PROPOSTA 2026
+   Paleta: 1C1C1C · CAABA3 · F6F3F1
 
-  /* ---------- capa ---------- */
-  .cover{ position:relative; height:1500px; background:var(--off) url(marca/mockup-lais.jpg) center 46%/cover no-repeat }
-  .cover .top,.cover .bottom{ position:absolute; left:80px; right:80px; display:flex; justify-content:space-between; font-size:22px; letter-spacing:.42em; text-transform:uppercase; color:var(--black) }
-  .cover .top{ top:80px; padding-bottom:26px; border-bottom:1px solid var(--hair) }
-  .cover .bottom{ bottom:90px; color:var(--grey); padding-top:26px; border-top:1px solid var(--hair) }
+   ESCALA DE TIPOGRAFIA (só estes tamanhos):
+   .t-label   22px  Montserrat 600, maiúsculas  (etiquetas)
+   .t-body    30px  Montserrat 400              (textos)
+   .t-strong  30px  Montserrat 600              (itens)
+   .t-h2      88px  fonte especial, minúsculas  (títulos de seção)
+   .t-h1     120px  fonte especial, minúsculas  (nome dos pacotes)
+   .t-price  120px  Montserrat 200              (preços e números)
+   .t-note    24px  notas de rodapé
+   ========================================================== */
+:root{
+  --black:#1C1C1C; --rose:#CAABA3; --off:#F6F3F1; --white:#FFFFFF;
+  --rose-d:#9E7C74;   /* rosé fechado, só para etiquetas pequenas */
+  --grey:#6B6461; --hair:#DED3CF;
+  --display:'Quotesa','Italiana',serif;
+  --m:80px;           /* margem lateral */
+}
+*{ box-sizing:border-box; margin:0; padding:0 }
+html,body{ width:1080px; background:var(--off) }
+body{ font-family:'Montserrat',sans-serif; color:var(--black); -webkit-print-color-adjust:exact; print-color-adjust:exact }
+img{ display:block; width:100%; height:auto }   /* imagens sempre inteiras: sem corte e sem distorção */
+a{ color:inherit; text-decoration:none }
 
-  /* ---------- manifesto ---------- */
-  .manifesto{ padding-top:150px; padding-bottom:150px }
-  .manifesto .display{ font-size:96px; margin-top:44px }
-  .manifesto .display em{ font-style:normal; color:var(--rose-d) }
-  .manifesto .body{ margin-top:56px; max-width:860px }
-  .pillars{ display:flex; justify-content:space-between; margin-top:80px; padding-top:34px; border-top:1px solid var(--hair); font-size:24px; letter-spacing:.3em; text-transform:uppercase; font-weight:500 }
-  .pillars span{ display:flex; align-items:center; gap:14px }
-  .pillars span::before{ content:""; width:10px; height:10px; border-radius:50%; background:var(--rose) }
+.t-label{ font-size:22px; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--rose-d); line-height:1.4 }
+.t-body { font-size:30px; font-weight:400; line-height:1.55; color:var(--grey) }
+.t-strong{ font-size:30px; font-weight:600; line-height:1.4; color:var(--black) }
+.t-h2   { font-family:var(--display); font-weight:400; font-size:88px; line-height:1.05; text-transform:lowercase }
+.t-h1   { font-family:var(--display); font-weight:400; font-size:120px; line-height:1; text-transform:lowercase }
+.t-price{ font-size:120px; font-weight:200; line-height:1; letter-spacing:-.02em; white-space:nowrap }
+.t-note { font-size:24px; line-height:1.5; color:var(--grey) }
 
-  /* ---------- portfólio ---------- */
-  .folio{ padding-bottom:40px }
-  .folio .grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:0 14px }
-  .folio .grid .photo{ height:520px }
-  .folio .wide{ grid-column:1/-1; height:720px !important }
-  .cap{ display:flex; justify-content:space-between; padding:26px 80px 0; font-size:22px; letter-spacing:.2em; text-transform:uppercase; color:var(--grey) }
+section{ padding:120px var(--m) }
+.bg-white{ background:var(--white) }
+.bg-rose{ background:var(--rose) }
+.sp-24{ margin-top:24px } .sp-32{ margin-top:32px } .sp-64{ margin-top:64px }
+.ico{ width:44px; height:44px; flex:none; fill:none; stroke:var(--rose-d); stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round }
+.gap{ height:12px }
 
-  /* ---------- itens ---------- */
-  .items{ padding-top:150px; padding-bottom:140px }
-  .items .display{ font-size:96px; margin-top:40px }
-  .list{ margin-top:70px; border-top:1px solid var(--black) }
-  .list .r{ display:grid; grid-template-columns:76px 1fr 42px; gap:26px; align-items:baseline; padding:34px 0; border-bottom:1px solid var(--hair) }
-  .list .r i{ font-style:normal; font-size:22px; letter-spacing:.2em; color:var(--rose-d); font-weight:500 }
-  .list .r b{ display:block; font-family:var(--display); font-weight:400; font-size:54px; line-height:1.1 }
-  .list .r span{ display:block; font-size:28px; line-height:1.5; color:var(--grey); margin-top:8px }
-  .list .r .ico{ align-self:center }
+/* listas com linhas finas (o mesmo padrão no documento inteiro) */
+.rows{ border-top:1.5px solid var(--black) }
+.row{ display:flex; gap:28px; align-items:center; padding:30px 0; border-bottom:1px solid var(--hair) }
+.row .txt{ flex:1 }
+.row .t-body{ margin-top:4px }
+.cols{ display:grid; grid-template-columns:1fr 1fr; column-gap:48px; border-top:1.5px solid var(--black) }
+.cols .full{ grid-column:1/-1 }
 
-  /* ---------- visão geral ---------- */
-  .menu{ background:var(--white); padding-top:140px; padding-bottom:140px }
-  .menu .display{ font-size:96px; margin-top:40px }
-  .menu .body{ margin-top:30px }
-  .menu .m{ display:flex; align-items:baseline; gap:24px; padding:38px 0; border-bottom:1px solid var(--hair); font-size:30px }
-  .menu .m:first-of-type{ border-top:1px solid var(--black); margin-top:64px }
-  .menu .m i{ font-style:normal; font-size:22px; letter-spacing:.2em; color:var(--rose-d); font-weight:500; width:56px }
-  .menu .m b{ font-family:var(--display); font-weight:400; font-size:58px }
-  .menu .m .dots{ flex:1; border-bottom:2px dotted var(--hair); transform:translateY(-12px) }
-  .menu .m .p{ font-size:44px; font-weight:300; white-space:nowrap }
-  .menu .m .p s{ font-size:26px; color:var(--grey); margin-right:12px }
-  .menu .m .st{ display:inline-block; margin-left:16px; font-size:18px; letter-spacing:.24em; text-transform:uppercase; font-weight:600; background:var(--rose); padding:8px 14px; vertical-align:middle; transform:translateY(-8px) }
+.center{ text-align:center }
 
-  /* ---------- pacote ---------- */
-  .pkg{ padding-top:120px; padding-bottom:130px }
-  .pkg .head{ display:flex; align-items:flex-end; justify-content:space-between }
-  .pkg .big{ font-size:250px; line-height:.75; font-weight:200; color:transparent; -webkit-text-stroke:2px var(--rose); letter-spacing:-.04em }
-  .pkg .tags{ display:flex; gap:12px; margin-bottom:14px }
-  .pkg .tags span{ font-size:20px; letter-spacing:.26em; text-transform:uppercase; font-weight:600; padding:12px 18px; border:1.5px solid var(--black) }
-  .pkg .tags span.f{ background:var(--black); color:var(--off) }
-  .pkg h3{ font-family:var(--display); font-weight:400; font-size:150px; line-height:1; margin-top:30px }
-  .pkg .for{ font-size:31px; line-height:1.55; color:var(--grey); margin-top:22px; max-width:880px }
-  .price{ display:flex; align-items:flex-end; justify-content:space-between; margin-top:64px; padding:40px 0; border-top:1px solid var(--black); border-bottom:1px solid var(--black) }
-  .price .v{ font-size:130px; font-weight:200; line-height:.85; letter-spacing:-.03em; white-space:nowrap }
-  .price .v small{ font-size:36px; font-weight:400; letter-spacing:0; vertical-align:top; margin-right:10px }
-  .price .was{ font-size:30px; color:var(--grey); text-decoration:line-through; margin-bottom:18px }
-  .price .pix{ text-align:right; font-size:24px; letter-spacing:.2em; text-transform:uppercase; color:var(--grey); line-height:1.6 }
-  .price .pix b{ display:block; font-size:44px; letter-spacing:0; color:var(--black); font-weight:400; text-transform:none }
-  .inc{ margin-top:56px }
-  .inc .k{ font-size:22px; letter-spacing:.34em; text-transform:uppercase; font-weight:600 }
-  .inc .k em{ font-style:normal; color:var(--rose-d) }
-  .inc ul{ list-style:none; display:grid; grid-template-columns:1fr 1fr; column-gap:44px; margin-top:22px }
-  .inc li{ display:flex; align-items:center; gap:20px; padding:26px 0; border-bottom:1px solid var(--hair); font-size:30px; line-height:1.3 }
-  .inc li.full{ grid-column:1/-1 }
-  .inc li.plus{ font-weight:600 }
-  .inc li.base{ grid-column:1/-1; color:var(--grey); font-style:normal }
-  .note{ display:flex; gap:18px; align-items:center; margin-top:40px; font-size:28px; font-weight:500 }
-  .pkg-img{ height:760px }
-  .pkg-img.duo{ display:grid; grid-template-columns:1fr 1fr; gap:14px; height:640px; padding:0 14px }
-  .pkg-img.duo div{ height:100% }
+/* resumo de preços */
+.menu .row{ justify-content:space-between }
+.menu .p{ font-size:30px; white-space:nowrap }
+.menu .p s{ color:var(--grey); margin-right:12px }
+.badge{ display:inline-block; font-size:22px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; padding:8px 14px; background:var(--black); color:var(--off); margin-left:14px; vertical-align:middle; line-height:1.2 }
+.badge.line{ background:none; color:var(--black); box-shadow:inset 0 0 0 1.5px var(--black) }
 
-  .pkg.rose{ background:var(--rose) }
-  .pkg.rose .big{ -webkit-text-stroke:2px var(--black); opacity:.85 }
-  .pkg.rose .for,.pkg.rose .price .pix,.pkg.rose .price .was{ color:#3E3633 }
-  .pkg.rose li{ border-color:rgba(28,28,28,.18) }
-  .pkg.rose .ico{ stroke:var(--black) }
-  .pkg.rose .inc .k em{ color:var(--black) }
-  .pkg.white{ background:var(--white) }
+/* bloco de preço */
+.price{ display:flex; justify-content:space-between; align-items:flex-end; padding:40px 0; border-top:1.5px solid var(--black); border-bottom:1.5px solid var(--black) }
+.price .cur{ font-size:30px; font-weight:400; letter-spacing:0; vertical-align:top; margin-right:10px }
+.price .pix{ text-align:right }
+.price .pix .t-strong{ margin-top:6px }
+.was{ text-decoration:line-through; margin-bottom:8px }
 
-  .choose{ margin-top:50px; padding:44px 0 0; border-top:1px solid var(--black) }
-  .choose .k{ font-size:22px; letter-spacing:.34em; text-transform:uppercase; font-weight:600 }
-  .opt{ display:grid; grid-template-columns:42px 1fr; gap:24px; padding:30px 0; border-bottom:1px solid var(--hair) }
-  .opt b{ display:block; font-size:30px; font-weight:600 }
-  .opt span{ display:block; font-size:26px; line-height:1.5; color:var(--grey); margin-top:6px }
-  .fine{ font-size:24px; color:var(--grey); margin-top:26px }
+/* números grandes (condições) */
+.fact{ display:flex; gap:40px; align-items:center; padding:40px 0; border-bottom:1px solid var(--hair) }
+.fact .t-price{ width:220px; flex:none; color:var(--rose-d) }
+.fact .t-price small{ font-size:30px; font-weight:400; letter-spacing:0; margin-left:4px }
 
+/* passo a passo */
+.step{ display:flex; gap:28px; align-items:baseline; padding:30px 0; border-bottom:1px solid var(--hair) }
+.step .t-label{ width:60px; flex:none }
 
-  /* ---------- instagram (vitrine) ---------- */
-  .ig-stage{ background:var(--rose); padding:90px 0 110px; position:relative; overflow:hidden }
-  .ig-tags{ display:flex; justify-content:center; gap:12px }
-  .ig-tags span{ font-size:22px; letter-spacing:.28em; text-transform:uppercase; font-weight:600; padding:14px 22px; border:1.5px solid var(--black) }
-  .ig-tags span.f{ background:var(--black); color:var(--off) }
-  .ig-wrap{ position:relative; height:930px; margin-top:70px }
-  .phone{ position:absolute; left:170px; top:0; width:500px; border:16px solid var(--black); border-radius:72px; background:var(--white); overflow:hidden; box-shadow:0 60px 90px -50px rgba(28,28,28,.55) }
-  .notch{ position:absolute; top:14px; left:50%; transform:translateX(-50%); width:130px; height:34px; border-radius:20px; background:var(--black) }
-  .scr{ padding:72px 22px 22px }
-  .ig-user{ font-size:22px; font-weight:600; text-align:center }
-  .prof{ display:flex; align-items:center; gap:26px; margin-top:22px }
-  .av{ width:112px; height:112px; border-radius:50%; border:3px solid var(--rose); padding:5px; flex:none }
-  .av img{ width:100%; height:100%; border-radius:50%; background:var(--off); object-fit:contain; padding:18px }
-  .stats{ flex:1; display:flex; justify-content:space-around }
-  .stats div{ display:flex; flex-direction:column; align-items:center; gap:8px }
-  .stats i{ width:46px; height:14px; background:#D8D0CC; border-radius:7px }
-  .stats u{ width:64px; height:10px; background:#ECE6E3; border-radius:5px }
-  .bio{ margin-top:18px; display:flex; flex-direction:column; gap:9px }
-  .bio b{ font-size:20px; font-weight:600 }
-  .bio i{ height:10px; background:#ECE6E3; border-radius:5px }
-  .hls{ display:flex; justify-content:space-between; margin-top:26px }
-  .hls div{ display:flex; flex-direction:column; align-items:center; gap:8px; font-size:15px; color:var(--grey) }
-  .hls span{ width:76px; height:76px; border-radius:50%; border:2px solid var(--rose); display:flex; align-items:center; justify-content:center; background:var(--off) }
-  .hls span img{ width:30px }
-  .hls .ico{ width:32px; height:32px }
-  .tabs{ display:flex; margin-top:22px; border-top:1px solid #ECE6E3 }
-  .tabs span{ flex:1; height:30px; position:relative }
-  .tabs span.on::after{ content:""; position:absolute; top:0; left:20%; right:20%; height:2px; background:var(--black) }
-  .feed{ display:grid; grid-template-columns:repeat(3,1fr); gap:4px }
-  .t{ aspect-ratio:1; background-size:cover; background-position:center; position:relative }
-  .t.fr::after{ content:""; position:absolute; inset:9px; border:2px solid rgba(255,255,255,.9) }
-  .t.txt{ background:var(--off); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px }
-  .t.txt img{ width:26px }
-  .t.txt em{ font-family:var(--display); font-style:normal; font-size:22px; text-align:center; line-height:1.1 }
-  .t.dark{ background:var(--black) }
-  .story{ position:absolute; left:690px; top:300px; width:300px; height:533px; border-radius:34px; border:10px solid var(--black); overflow:hidden; transform:rotate(5deg);
-          background:#ddd url(marca/verbenna-cartoes.jpg) 30% center/cover; box-shadow:0 50px 80px -40px rgba(28,28,28,.55) }
-  .story .bars{ position:absolute; top:16px; left:16px; right:16px; display:flex; gap:6px }
-  .story .bars i{ flex:1; height:4px; background:rgba(255,255,255,.6); border-radius:2px }
-  .story .bars i:first-child{ background:#fff }
-  .sframe{ position:absolute; inset:46px 20px 26px; border:2px solid #fff; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; padding-bottom:20px; gap:8px }
-  .sframe img{ width:28px; filter:brightness(10) }
-  .sframe span{ font-family:var(--display); color:#fff; font-size:30px; text-transform:lowercase }
-  .ann{ position:absolute; display:flex; align-items:center }
-  .ann span{ background:var(--off); font-size:19px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; padding:12px 16px; white-space:nowrap }
-  .ann::after{ content:""; height:1.5px; background:var(--black); width:var(--l) }
-  .ann.a1{ left:40px; top:395px; --l:40px; flex-direction:row }
-  .ann.a1 span{ max-width:220px; white-space:normal; line-height:1.4 }
-  .ann.a2{ left:40px; top:800px; --l:70px }
-  .ann.a3{ right:60px; top:880px; flex-direction:row-reverse; --l:0px }
-  .ig-info{ padding-top:100px }
-  .mk{ position:absolute; width:52px; height:52px; border-radius:50%; background:var(--black); color:var(--off); font-style:normal; font-size:24px; font-weight:600; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 6px var(--rose); z-index:3 }
-  .legend{ display:grid; gap:14px; margin:70px 80px 0 }
-  .legend div{ display:flex; align-items:center; gap:22px; font-size:30px; font-weight:500; padding-bottom:14px; border-bottom:1px solid rgba(28,28,28,.2) }
-  .legend .mk{ position:static; width:46px; height:46px; font-size:21px; box-shadow:none; flex:none }
+/* botão e contatos */
+.cta{ display:block; text-align:center; background:var(--black); color:var(--off); font-size:30px; font-weight:600; letter-spacing:.04em; padding:36px; border-radius:999px }
+.cta span{ color:var(--rose) }
 
-  /* ---------- condições ---------- */
-  .cond{ background:var(--black); color:var(--off); padding-top:140px; padding-bottom:140px }
-  .cond .label{ color:var(--rose) }
-  .cond .display{ font-size:96px; margin-top:40px }
-  .facts{ display:grid; grid-template-columns:1fr 1fr; margin-top:70px; border-top:1px solid rgba(246,243,241,.25) }
-  .fact{ padding:50px 0 50px; border-bottom:1px solid rgba(246,243,241,.25) }
-  .fact.wide{ grid-column:1/-1; padding-left:0 !important; padding-right:0 !important; border-right:none !important }
-  .fact:nth-child(even){ padding-right:40px; border-right:1px solid rgba(246,243,241,.25) }
-  .fact:nth-child(odd){ padding-left:40px }
-  .fact .n{ font-size:130px; font-weight:200; line-height:.9; color:var(--rose); letter-spacing:-.03em }
-  .fact .n small{ font-size:40px; letter-spacing:0; margin-left:6px }
-  .fact b{ display:block; font-size:28px; font-weight:600; margin-top:22px; letter-spacing:.02em }
-  .fact span{ display:block; font-size:25px; line-height:1.5; color:#BDB4B0; margin-top:8px }
-
-  /* ---------- processo ---------- */
-  .proc{ padding-top:150px; padding-bottom:130px }
-  .proc .display{ font-size:96px; margin-top:40px }
-  .steps{ display:grid; grid-template-columns:1fr 1fr; gap:0 44px; margin-top:70px; border-top:1px solid var(--black) }
-  .s{ padding:40px 0; border-bottom:1px solid var(--hair) }
-  .s .n{ font-size:72px; font-weight:200; color:var(--rose-d); line-height:1; letter-spacing:-.03em }
-  .s b{ display:block; font-size:30px; font-weight:600; margin-top:14px }
-  .s span{ display:block; font-size:26px; line-height:1.5; color:var(--grey); margin-top:8px }
-
-  /* ---------- fechamento ---------- */
-  .end-img{ height:1080px; background:var(--off) url(marca/mockup-la.jpg) center/cover no-repeat }
-  .end{ text-align:center; padding-top:20px; padding-bottom:130px }
-  .end .display{ font-size:104px }
-  .end .body{ margin:40px auto 0; max-width:820px }
-  .contact{ margin-top:70px; border-top:1px solid var(--black) }
-  .cta{ display:flex; justify-content:center; align-items:center; gap:18px; margin:60px auto 0; background:var(--black); color:var(--off); text-decoration:none; font-size:30px; font-weight:500; letter-spacing:.06em; padding:34px; border-radius:999px }
-  .cta span{ color:var(--rose) }
-  .contact a{ color:var(--black); text-decoration:none; display:flex; justify-content:space-between; align-items:center; padding:36px 0; border-bottom:1px solid var(--hair); font-size:30px }
-  .contact a span{ font-size:22px; letter-spacing:.34em; text-transform:uppercase; color:var(--rose-d); font-weight:500 }
+/* ---------- vitrine do pacote instagram (ilustração em código) ---------- */
+.ig{ display:flex; justify-content:center; gap:48px; padding:100px 0 0 }
+.dev{ width:400px }
+.phone{ width:400px; height:820px; border:14px solid var(--black); border-radius:60px; background:var(--white); overflow:hidden; position:relative }
+.notch{ position:absolute; top:12px; left:50%; transform:translateX(-50%); width:110px; height:30px; border-radius:16px; background:var(--black); z-index:2 }
+.scr{ padding:64px 20px 0 }
+.u{ text-align:center; font-size:18px; font-weight:600 }
+.prof{ display:flex; align-items:center; gap:22px; margin-top:20px }
+.av{ width:92px; height:92px; border-radius:50%; box-shadow:0 0 0 3px var(--rose); background:var(--off); display:flex; align-items:center; justify-content:center; flex:none; margin-left:4px }
+.av img{ width:44px }
+.st{ flex:1; display:flex; justify-content:space-around }
+.st i{ display:block; width:40px; height:12px; border-radius:6px; background:#DCD3CF }
+.st i+i{ width:54px; height:9px; margin-top:7px; background:#ECE6E3 }
+.bio{ margin-top:16px } .bio i{ display:block; height:9px; border-radius:5px; background:#ECE6E3; margin-top:9px }
+.bio b{ font-size:16px }
+.hl{ display:flex; justify-content:space-between; margin-top:22px; padding:0 2px }
+.hl span{ width:60px; height:60px; border-radius:50%; box-shadow:0 0 0 2px var(--rose); background:var(--off); display:flex; align-items:center; justify-content:center }
+.hl img{ width:24px } .hl .ico{ width:26px; height:26px }
+.tab{ height:2px; background:#ECE6E3; margin:20px -20px 0; position:relative }
+.tab::after{ content:""; position:absolute; left:0; width:33%; height:2px; background:var(--black) }
+.feed{ display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin:3px -20px 0 }
+.tile{ aspect-ratio:1; display:flex; align-items:center; justify-content:center; position:relative }
+.tile.fr::after{ content:""; position:absolute; inset:8px; border:1.5px solid rgba(28,28,28,.3) }
+.tile.frw::after{ content:""; position:absolute; inset:8px; border:1.5px solid rgba(255,255,255,.75) }
+.tile img{ width:28% }
+.tile em{ font-family:var(--display); font-style:normal; font-size:20px; text-align:center; line-height:1.1 }
+.story{ height:100%; background:var(--off); position:relative }
+.bars{ position:absolute; top:56px; left:20px; right:20px; display:flex; gap:6px }
+.bars i{ flex:1; height:3px; border-radius:2px; background:rgba(28,28,28,.2) } .bars i:first-child{ background:var(--black) }
+.sfr{ position:absolute; inset:90px 26px 40px; border:1.5px solid var(--rose); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; text-align:center }
+.sfr img{ width:110px }
+.sfr em{ font-family:var(--display); font-style:normal; font-size:44px; line-height:1.1 }
+.sfr span{ font-size:14px; letter-spacing:.3em; text-transform:uppercase; color:var(--rose-d); font-weight:600 }
+.dev .t-label{ text-align:center; margin-top:28px; color:var(--black) }
 </style>
 </head>
 <body>
 
-<!-- ============ ÍCONES (traço fino) ============ -->
-<svg width="0" height="0" style="position:absolute">
-  <defs>
-    <symbol id="i-logo" viewBox="0 0 48 48"><path d="M10 38 L20 10 L30 38 M14 28 h12"/><path d="M34 10 v28 h8"/></symbol>
-    <symbol id="i-sub" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="11"/></symbol>
-    <symbol id="i-icon" viewBox="0 0 48 48"><ellipse cx="24" cy="14" rx="5" ry="8"/><ellipse cx="24" cy="34" rx="5" ry="8"/><ellipse cx="14" cy="24" rx="8" ry="5"/><ellipse cx="34" cy="24" rx="8" ry="5"/></symbol>
-    <symbol id="i-water" viewBox="0 0 48 48"><path d="M24 6 C24 6 12 20 12 29 a12 12 0 0 0 24 0 C36 20 24 6 24 6 Z"/></symbol>
-    <symbol id="i-pattern" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34"/><circle cx="16" cy="16" r="2.5"/><circle cx="32" cy="16" r="2.5"/><circle cx="24" cy="24" r="2.5"/><circle cx="16" cy="32" r="2.5"/><circle cx="32" cy="32" r="2.5"/></symbol>
-    <symbol id="i-palette" viewBox="0 0 48 48"><circle cx="17" cy="18" r="9"/><circle cx="31" cy="18" r="9"/><circle cx="24" cy="31" r="9"/></symbol>
-    <symbol id="i-variation" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 8 a16 16 0 0 0 0 32 Z" fill="currentColor" stroke="none" style="fill:var(--rose)"/></symbol>
-    <symbol id="i-doc" viewBox="0 0 48 48"><path d="M12 6 h17 l9 9 v27 h-26 Z"/><path d="M29 6 v9 h9"/><path d="M18 24 h14 M18 30 h14 M18 36 h8"/></symbol>
-    <symbol id="i-hl" viewBox="0 0 48 48"><circle cx="10" cy="24" r="6.5"/><circle cx="24" cy="24" r="6.5"/><circle cx="38" cy="24" r="6.5"/></symbol>
-    <symbol id="i-post" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32"/><rect x="14" y="14" width="20" height="20"/></symbol>
-    <symbol id="i-story" viewBox="0 0 48 48"><rect x="13" y="4" width="22" height="40" rx="3"/><rect x="17" y="12" width="14" height="24"/></symbol>
-    <symbol id="i-card" viewBox="0 0 48 48"><rect x="5" y="12" width="38" height="24"/><path d="M11 20 h12 M11 26 h8"/></symbol>
-    <symbol id="i-print" viewBox="0 0 48 48"><rect x="6" y="20" width="26" height="20"/><path d="M12 16 h26 v18 M18 10 h26 v18"/></symbol>
-    <symbol id="i-truck" viewBox="0 0 48 48"><path d="M4 12 h24 v20 H4 Z M28 18 h9 l7 8 v6 h-16"/><circle cx="13" cy="35" r="4"/><circle cx="36" cy="35" r="4"/></symbol>
-    <symbol id="i-tag" viewBox="0 0 48 48"><path d="M8 8 h16 l18 18 -16 16 L8 24 Z"/><circle cx="17" cy="17" r="3"/></symbol>
-    <symbol id="i-sticker" viewBox="0 0 48 48"><path d="M8 8 h32 v20 l-12 12 H8 Z"/><path d="M40 28 h-12 v12"/></symbol>
-    <symbol id="i-pen" viewBox="0 0 48 48"><path d="M24 4 L36 22 L24 44 L12 22 Z"/><path d="M24 4 v24"/><circle cx="24" cy="30" r="3"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13 v11 l8 5"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 48 48"><path d="M24 10 v28 M10 24 h28"/></symbol>
-  </defs>
-</svg>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="i-logo" viewBox="0 0 48 48"><path d="M10 38 L20 10 L30 38 M14 28 h12"/><path d="M34 10 v28 h8"/></symbol>
+  <symbol id="i-sub" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="11"/></symbol>
+  <symbol id="i-icon" viewBox="0 0 48 48"><ellipse cx="24" cy="14" rx="5" ry="8"/><ellipse cx="24" cy="34" rx="5" ry="8"/><ellipse cx="14" cy="24" rx="8" ry="5"/><ellipse cx="34" cy="24" rx="8" ry="5"/></symbol>
+  <symbol id="i-water" viewBox="0 0 48 48"><path d="M24 6 C24 6 12 20 12 29 a12 12 0 0 0 24 0 C36 20 24 6 24 6 Z"/></symbol>
+  <symbol id="i-pattern" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34"/><circle cx="16" cy="16" r="2.5"/><circle cx="32" cy="16" r="2.5"/><circle cx="24" cy="24" r="2.5"/><circle cx="16" cy="32" r="2.5"/><circle cx="32" cy="32" r="2.5"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 48 48"><circle cx="17" cy="18" r="9"/><circle cx="31" cy="18" r="9"/><circle cx="24" cy="31" r="9"/></symbol>
+  <symbol id="i-variation" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 8 a16 16 0 0 0 0 32 Z" style="fill:#CAABA3;stroke:none"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 48 48"><path d="M12 6 h17 l9 9 v27 h-26 Z"/><path d="M29 6 v9 h9"/><path d="M18 24 h14 M18 30 h14 M18 36 h8"/></symbol>
+  <symbol id="i-hl" viewBox="0 0 48 48"><circle cx="10" cy="24" r="6.5"/><circle cx="24" cy="24" r="6.5"/><circle cx="38" cy="24" r="6.5"/></symbol>
+  <symbol id="i-post" viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32"/><rect x="14" y="14" width="20" height="20"/></symbol>
+  <symbol id="i-story" viewBox="0 0 48 48"><rect x="13" y="4" width="22" height="40" rx="3"/><rect x="17" y="12" width="14" height="24"/></symbol>
+  <symbol id="i-card" viewBox="0 0 48 48"><rect x="5" y="12" width="38" height="24"/><path d="M11 20 h12 M11 26 h8"/></symbol>
+  <symbol id="i-print" viewBox="0 0 48 48"><rect x="6" y="20" width="26" height="20"/><path d="M12 16 h26 v18 M18 10 h26 v18"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 48 48"><path d="M4 12 h24 v20 H4 Z M28 18 h9 l7 8 v6 h-16"/><circle cx="13" cy="35" r="4"/><circle cx="36" cy="35" r="4"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 48 48"><path d="M8 8 h16 l18 18 -16 16 L8 24 Z"/><circle cx="17" cy="17" r="3"/></symbol>
+  <symbol id="i-sticker" viewBox="0 0 48 48"><path d="M8 8 h32 v20 l-12 12 H8 Z"/><path d="M40 28 h-12 v12"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 48 48"><path d="M24 4 L36 22 L24 44 L12 22 Z"/><path d="M24 4 v24"/><circle cx="24" cy="30" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13 v11 l8 5"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 48 48"><path d="M8 40 l3-9 a17 17 0 1 1 6 6 Z"/><path d="M18 17 c0 7 6 13 13 13 l2-3 -4-2 -2 2 c-3-1-5-3-6-6 l2-2 -2-4 Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="34" rx="10"/><circle cx="24" cy="24" r="8"/><circle cx="34" cy="14" r="1.5"/></symbol>
+</defs></svg>
 
-<!-- ================= CAPA ================= -->
-<section class="cover">
-  <div class="top"><span>Proposta</span><span>2026</span></div>
-  <div class="bottom"><span>Identidade visual</span><span>Lais Amaral</span></div>
+<!-- ======================= CAPA ======================= -->
+<img src="marca/mockup-lais.jpg" alt="LAIS">
+<section class="center" style="padding-top:0">
+  <div class="t-label">Proposta 2026</div>
+  <div class="t-h2 sp-24">identidade visual</div>
 </section>
 
-<!-- ================= MANIFESTO ================= -->
-<section class="manifesto pad">
-  <img class="flor" src="marca/flor.png" alt="">
-  <div class="display">Uma marca não é só um logo. É o <em>sentimento</em> que fica.</div>
-  <p class="body">Identidade visual é o conjunto de elementos que faz o seu negócio ser reconhecido, transmitir valor e falar com o público certo — em cada post, embalagem e cartão.</p>
-  <div class="pillars"><span>Reconhecer</span><span>Valorizar</span><span>Posicionar</span></div>
+<!-- ======================= MANIFESTO ======================= -->
+<section class="bg-white">
+  <div class="t-label">Antes de tudo</div>
+  <div class="t-h2 sp-24">uma marca não é só um logo. é o sentimento que fica.</div>
+  <p class="t-body sp-32">Identidade visual é o conjunto de elementos que faz o seu negócio ser reconhecido, transmitir valor e falar com o público certo — em cada post, embalagem e cartão.</p>
 </section>
 
-<!-- ================= PORTFÓLIO ================= -->
-<section class="folio">
-  <div class="grid">
-    <div class="photo wide" style="background-image:url(marca/verbenna-cosmeticos.jpg)"></div>
-    <div class="photo" style="background-image:url(marca/cartoes-rayanne.jpg)"></div>
-    <div class="photo" style="background-image:url(marca/chocolate.jpg)"></div>
-  </div>
-  <div class="cap"><span>Projetos selecionados</span><span>Lais Amaral</span></div>
-</section>
+<!-- ======================= PROJETO ======================= -->
+<img src="marca/verbenna-cosmeticos.jpg" alt="Projeto Verbenna">
 
-<!-- ================= ITENS ================= -->
-<section class="items pad">
-  <div class="label">O que compõe a sua marca</div>
-  <div class="display">Cada peça, explicada</div>
-  <div class="list">
-    <div class="r"><i>01</i><div><b>Logotipo</b><span>A assinatura principal da marca.</span></div><svg class="ico"><use href="#i-logo"/></svg></div>
-    <div class="r"><i>02</i><div><b>Submarca</b><span>Versão reduzida e circular do logo, para espaços pequenos.</span></div><svg class="ico"><use href="#i-sub"/></svg></div>
-    <div class="r"><i>03</i><div><b>Ícone</b><span>O símbolo que representa a marca sozinho.</span></div><svg class="ico"><use href="#i-icon"/></svg></div>
-    <div class="r"><i>04</i><div><b>Marcas d’água</b><span>Logo, submarca ou ícone com fundo transparente, para fotos e posts.</span></div><svg class="ico"><use href="#i-water"/></svg></div>
-    <div class="r"><i>05</i><div><b>Pattern</b><span>Estampa exclusiva para embalagens, fundos e papelaria.</span></div><svg class="ico"><use href="#i-pattern"/></svg></div>
-    <div class="r"><i>06</i><div><b>Paleta & tipografia</b><span>As cores e fontes oficiais da sua marca.</span></div><svg class="ico"><use href="#i-palette"/></svg></div>
-    <div class="r"><i>07</i><div><b>Variações de cor</b><span>Versões branca, preta e colorida, para qualquer fundo.</span></div><svg class="ico"><use href="#i-variation"/></svg></div>
-    <div class="r"><i>08</i><div><b>Apresentação</b><span>Um PDF com todo o projeto, pronto para você usar.</span></div><svg class="ico"><use href="#i-doc"/></svg></div>
+<!-- ======================= ITENS ======================= -->
+<section>
+  <div class="t-label">O que compõe a sua marca</div>
+  <div class="t-h2 sp-24">cada peça, explicada</div>
+  <div class="rows sp-64">
+    <div class="row"><svg class="ico"><use href="#i-logo"/></svg><div class="txt"><div class="t-strong">Logotipo</div><div class="t-body">A assinatura principal da marca.</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-sub"/></svg><div class="txt"><div class="t-strong">Submarca</div><div class="t-body">Versão reduzida e circular do logo.</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-icon"/></svg><div class="txt"><div class="t-strong">Ícone</div><div class="t-body">O símbolo que representa a marca sozinho.</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-water"/></svg><div class="txt"><div class="t-strong">Marcas d’água</div><div class="t-body">A marca com fundo transparente, para fotos e posts.</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-pattern"/></svg><div class="txt"><div class="t-strong">Pattern</div><div class="t-body">Estampa exclusiva para embalagens e fundos.</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-palette"/></svg><div class="txt"><div class="t-strong">Paleta & tipografia</div><div class="t-body">As cores e fontes oficiais da marca.</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-variation"/></svg><div class="txt"><div class="t-strong">Variações de cor</div><div class="t-body">Versões branca, preta e colorida.</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-doc"/></svg><div class="txt"><div class="t-strong">Apresentação</div><div class="t-body">Um PDF com todo o projeto, pronto para usar.</div></div></div>
   </div>
 </section>
 
-<!-- ================= VISÃO GERAL ================= -->
-<section class="menu pad">
-  <div class="label">Investimento</div>
-  <div class="display">Quatro caminhos</div>
-  <p class="body">Cada pacote inclui tudo do anterior, e mais um pouco.</p>
-  <div class="m"><i>01</i><b>Básico</b><span class="dots"></span><span class="p">R$ 240</span></div>
-  <div class="m"><i>02</i><b>Completo</b><span class="dots"></span><span class="p">R$ 470</span></div>
-  <div class="m"><i>03</i><b>Instagram<span class="st">★ mais vendido</span></b><span class="dots"></span><span class="p"><s>540</s>R$ 398,90</span></div>
-  <div class="m"><i>04</i><b>Papelaria</b><span class="dots"></span><span class="p">R$ 680</span></div>
-</section>
-
-<!-- ================= 01 BÁSICO ================= -->
-<div class="photo pkg-img" style="background-image:url(marca/chocolate.jpg)"></div>
-<section class="pkg pad">
-  <div class="head"><div class="big">01</div></div>
-  <h3>Básico</h3>
-  <p class="for">Para quem está começando e quer uma marca bonita, coerente e pronta para usar.</p>
-  <div class="price">
-    <div class="v"><small>R$</small>240</div>
-    <div class="pix">no Pix<b>R$ 228</b></div>
-  </div>
-  <div class="inc">
-    <div class="k">Inclui</div>
-    <ul>
-      <li><svg class="ico"><use href="#i-logo"/></svg>Logotipo</li>
-      <li><svg class="ico"><use href="#i-sub"/></svg>Submarca</li>
-      <li><svg class="ico"><use href="#i-water"/></svg>6 marcas d’água</li>
-      <li><svg class="ico"><use href="#i-pattern"/></svg>Pattern</li>
-      <li><svg class="ico"><use href="#i-palette"/></svg>Paleta & fontes</li>
-      <li><svg class="ico"><use href="#i-variation"/></svg>Variações de cor</li>
-      <li class="full"><svg class="ico"><use href="#i-doc"/></svg>Apresentação da marca</li>
-    </ul>
+<!-- ======================= RESUMO ======================= -->
+<section class="bg-white menu">
+  <div class="t-label">Investimento</div>
+  <div class="t-h2 sp-24">quatro pacotes</div>
+  <p class="t-body sp-32">Cada pacote inclui tudo do anterior, e mais um pouco.</p>
+  <div class="rows sp-64">
+    <div class="row"><span class="t-strong">01 · Básico</span><span class="p">R$ 240</span></div>
+    <div class="row"><span class="t-strong">02 · Completo</span><span class="p">R$ 470</span></div>
+    <div class="row"><span class="t-strong">03 · Instagram <span class="badge">★ mais vendido</span></span><span class="p"><s>540</s>R$ 398,90</span></div>
+    <div class="row"><span class="t-strong">04 · Papelaria</span><span class="p">R$ 680</span></div>
   </div>
 </section>
 
-<!-- ================= 02 COMPLETO ================= -->
-<div class="photo pkg-img" style="background-image:url(marca/verbenna-cartoes.jpg)"></div>
-<section class="pkg pad white">
-  <div class="head"><div class="big">02</div></div>
-  <h3>Completo</h3>
-  <p class="for">A identidade visual inteira, com ícone e mais versões para usar em tudo.</p>
-  <div class="price">
-    <div class="v"><small>R$</small>470</div>
-    <div class="pix">no Pix<b>R$ 446,50</b></div>
+<!-- ======================= 01 BÁSICO ======================= -->
+<img src="marca/chocolate.jpg" alt="Projeto embalagem de chocolate">
+<section>
+  <div class="t-label">Pacote 01</div>
+  <div class="t-h1 sp-24">básico</div>
+  <p class="t-body sp-32">Para quem está começando e quer uma marca bonita e pronta para usar.</p>
+  <div class="price sp-64">
+    <div class="t-price"><span class="cur">R$</span>240</div>
+    <div class="pix"><div class="t-label">no Pix</div><div class="t-strong">R$ 228</div></div>
   </div>
-  <div class="inc">
-    <div class="k">Tudo do Básico <em>+</em></div>
-    <ul>
-      <li class="plus"><svg class="ico"><use href="#i-icon"/></svg>Ícone</li>
-      <li class="plus"><svg class="ico"><use href="#i-water"/></svg>9 marcas d’água</li>
-    </ul>
+  <div class="t-label sp-64">Inclui</div>
+  <div class="cols sp-24">
+    <div class="row"><svg class="ico"><use href="#i-logo"/></svg><span class="t-strong">Logotipo</span></div>
+    <div class="row"><svg class="ico"><use href="#i-sub"/></svg><span class="t-strong">Submarca</span></div>
+    <div class="row"><svg class="ico"><use href="#i-water"/></svg><span class="t-strong">6 marcas d’água</span></div>
+    <div class="row"><svg class="ico"><use href="#i-pattern"/></svg><span class="t-strong">Pattern</span></div>
+    <div class="row"><svg class="ico"><use href="#i-palette"/></svg><span class="t-strong">Paleta & fontes</span></div>
+    <div class="row"><svg class="ico"><use href="#i-variation"/></svg><span class="t-strong">Variações de cor</span></div>
+    <div class="row full"><svg class="ico"><use href="#i-doc"/></svg><span class="t-strong">Apresentação da marca</span></div>
   </div>
 </section>
 
-<!-- ================= 03 INSTAGRAM ================= -->
-<div class="ig-stage">
-  <div class="ig-tags"><span class="f">★ mais vendido</span><span>lançamento</span></div>
-  <div class="ig-wrap">
-    <div class="phone">
-      <div class="notch"></div>
-      <div class="scr">
-        <div class="ig-user">suamarca</div>
-        <div class="prof">
-          <div class="av"><img src="marca/monograma.png" alt=""></div>
-          <div class="stats"><div><i></i><u></u></div><div><i></i><u></u></div><div><i></i><u></u></div></div>
-        </div>
-        <div class="bio"><b>Sua Marca</b><i style="width:78%"></i><i style="width:54%"></i></div>
-        <div class="hls">
-          <div><span><img src="marca/flor.png" alt=""></span>sobre</div>
-          <div><span><svg class="ico"><use href="#i-pen"/></svg></span>serviços</div>
-          <div><span><svg class="ico"><use href="#i-post"/></svg></span>projetos</div>
-          <div><span><svg class="ico"><use href="#i-icon"/></svg></span>dicas</div>
-          <div><span><svg class="ico"><use href="#i-water"/></svg></span>contato</div>
-        </div>
-        <div class="tabs"><span class="on"></span><span></span><span></span></div>
-        <div class="feed">
-          <div class="t fr" style="background-image:url(marca/verbenna-cosmeticos.jpg)"></div>
-          <div class="t txt"><img src="marca/flor.png" alt=""><em>dica da<br>semana</em></div>
-          <div class="t" style="background-image:url(marca/chocolate.jpg)"></div>
-          <div class="t" style="background-image:url(marca/cartoes-rayanne.jpg)"></div>
-          <div class="t fr" style="background-image:url(marca/tag-closet.jpg)"></div>
-          <div class="t txt dark"><img src="marca/monograma-branco.png" alt="" style="width:34%"></div>
+<!-- ======================= 02 COMPLETO ======================= -->
+<img src="marca/verbenna-cartoes.jpg" alt="Projeto Verbenna, cartões">
+<section class="bg-white">
+  <div class="t-label">Pacote 02</div>
+  <div class="t-h1 sp-24">completo</div>
+  <p class="t-body sp-32">A identidade visual inteira, com ícone e mais versões para usar em tudo.</p>
+  <div class="price sp-64">
+    <div class="t-price"><span class="cur">R$</span>470</div>
+    <div class="pix"><div class="t-label">no Pix</div><div class="t-strong">R$ 446,50</div></div>
+  </div>
+  <div class="t-label sp-64">Tudo do Básico +</div>
+  <div class="cols sp-24">
+    <div class="row"><svg class="ico"><use href="#i-icon"/></svg><span class="t-strong">Ícone</span></div>
+    <div class="row"><svg class="ico"><use href="#i-water"/></svg><span class="t-strong">9 marcas d’água</span></div>
+  </div>
+</section>
+
+<!-- ======================= 03 INSTAGRAM ======================= -->
+<div class="bg-rose">
+  <div class="ig">
+    <div class="dev">
+      <div class="phone"><div class="notch"></div>
+        <div class="scr">
+          <div class="u">suamarca</div>
+          <div class="prof">
+            <div class="av"><img src="marca/monograma.png" alt=""></div>
+            <div class="st"><div><i></i><i></i></div><div><i></i><i></i></div><div><i></i><i></i></div></div>
+          </div>
+          <div class="bio"><b>Sua Marca</b><i style="width:80%"></i><i style="width:55%"></i></div>
+          <div class="hl">
+            <span><img src="marca/flor.png" alt=""></span>
+            <span><svg class="ico"><use href="#i-pen"/></svg></span>
+            <span><svg class="ico"><use href="#i-post"/></svg></span>
+            <span><svg class="ico"><use href="#i-icon"/></svg></span>
+            <span><svg class="ico"><use href="#i-water"/></svg></span>
+          </div>
+          <div class="tab"></div>
+          <div class="feed">
+            <div class="tile fr" style="background:var(--off)"><img src="marca/flor.png" alt=""></div>
+            <div class="tile frw" style="background:var(--rose)"><em>dica da<br>semana</em></div>
+            <div class="tile" style="background:var(--black)"><img src="marca/monograma-branco.png" alt="" style="width:30%"></div>
+            <div class="tile frw" style="background:var(--black)"><em style="color:var(--off)">novo<br>post</em></div>
+            <div class="tile fr" style="background:var(--off)"><img src="marca/monograma.png" alt="" style="width:30%"></div>
+            <div class="tile" style="background:var(--rose)"><img src="marca/flor.png" alt="" style="filter:brightness(0) invert(1)"></div>
+            <div class="tile frw" style="background:var(--rose)"><em>bastidores</em></div>
+            <div class="tile fr" style="background:var(--off)"><em>novidade</em></div>
+            <div class="tile" style="background:var(--black)"><img src="marca/flor.png" alt=""></div>
+          </div>
         </div>
       </div>
+      <div class="t-label">Destaques + posts</div>
     </div>
-    <div class="story">
-      <div class="bars"><i></i><i></i><i></i></div>
-      <div class="sframe"><img src="marca/flor.png" alt=""><span>novidade</span></div>
+    <div class="dev">
+      <div class="phone"><div class="notch"></div>
+        <div class="story">
+          <div class="bars"><i></i><i></i><i></i></div>
+          <div class="sfr"><img src="marca/monograma.png" alt=""><em>novidade<br>na loja</em><span>@suamarca</span></div>
+        </div>
+      </div>
+      <div class="t-label">Stories</div>
     </div>
-    <i class="mk" style="left:118px;top:372px">1</i>
-    <i class="mk" style="left:118px;top:640px">2</i>
-    <i class="mk" style="left:968px;top:282px">3</i>
   </div>
-  <div class="legend">
-    <div><i class="mk">1</i>5 capas de destaques</div>
-    <div><i class="mk">2</i>2 molduras de post</div>
-    <div><i class="mk">3</i>2 molduras de stories</div>
-  </div>
+  <p class="t-note center" style="padding:40px var(--m) 100px;color:var(--black)">Ilustração: o seu perfil é criado com a sua marca.</p>
 </div>
-<section class="pkg pad white ig-info">
-  <div class="head"><div class="big">03</div></div>
-  <h3>instagram</h3>
-  <p class="for">A marca completa + o seu perfil pronto: bonito, organizado e com cara de marca profissional.</p>
-  <div class="price">
-    <div><div class="was">de R$ 540</div><div class="v"><small>R$</small>398,90</div></div>
-    <div class="pix">no Pix<b>R$ 378,96</b></div>
+<section class="bg-white">
+  <div class="t-label">Pacote 03 <span class="badge">★ mais vendido</span><span class="badge line">lançamento</span></div>
+  <div class="t-h1 sp-24">instagram</div>
+  <p class="t-body sp-32">A marca completa + o seu perfil pronto: bonito, organizado e profissional.</p>
+  <div class="price sp-64">
+    <div><div class="t-body was">de R$ 540</div><div class="t-price"><span class="cur">R$</span>398,90</div></div>
+    <div class="pix"><div class="t-label">no Pix</div><div class="t-strong">R$ 378,96</div></div>
   </div>
-  <div class="note"><svg class="ico"><use href="#i-clock"/></svg>Valor de lançamento por tempo e vagas limitadas.</div>
-  <div class="inc">
-    <div class="k">Tudo do Completo <em>+</em></div>
-    <ul>
-      <li class="plus full"><svg class="ico"><use href="#i-hl"/></svg>5 capas para os destaques</li>
-      <li class="plus"><svg class="ico"><use href="#i-post"/></svg>2 molduras de post</li>
-      <li class="plus"><svg class="ico"><use href="#i-story"/></svg>2 molduras de stories</li>
-    </ul>
+  <div class="row"><svg class="ico"><use href="#i-clock"/></svg><span class="t-strong">Valor de lançamento por tempo e vagas limitadas</span></div>
+  <div class="t-label sp-64">Tudo do Completo +</div>
+  <div class="cols sp-24">
+    <div class="row full"><svg class="ico"><use href="#i-hl"/></svg><span class="t-strong">5 capas para os destaques</span></div>
+    <div class="row"><svg class="ico"><use href="#i-post"/></svg><span class="t-strong">2 molduras de post</span></div>
+    <div class="row"><svg class="ico"><use href="#i-story"/></svg><span class="t-strong">2 molduras de stories</span></div>
   </div>
 </section>
 
-<!-- ================= 04 PAPELARIA ================= -->
-<div class="pkg-img duo" style="padding-top:14px">
-  <div class="photo" style="background-image:url(marca/cartoes-rayanne.jpg)"></div>
-  <div class="photo" style="background-image:url(marca/tag-closet.jpg)"></div>
-</div>
-<section class="pkg pad">
-  <div class="head"><div class="big">04</div></div>
-  <h3>Papelaria</h3>
-  <p class="for">A marca completa + o seu material impresso, entregue na sua porta.</p>
-  <div class="price">
-    <div class="v"><small>R$</small>680</div>
-    <div class="pix">no Pix<b>R$ 646</b></div>
+<!-- ======================= 04 PAPELARIA ======================= -->
+<img src="marca/cartoes-rayanne.jpg" alt="Projeto cartões de visita">
+<div class="gap"></div>
+<img src="marca/tag-closet.jpg" alt="Projeto tag">
+<section>
+  <div class="t-label">Pacote 04</div>
+  <div class="t-h1 sp-24">papelaria</div>
+  <p class="t-body sp-32">A marca completa + o seu material impresso, entregue na sua porta.</p>
+  <div class="price sp-64">
+    <div class="t-price"><span class="cur">R$</span>680</div>
+    <div class="pix"><div class="t-label">no Pix</div><div class="t-strong">R$ 646</div></div>
   </div>
-  <div class="inc">
-    <div class="k">Tudo do Completo <em>+</em></div>
-    <ul>
-      <li class="plus"><svg class="ico"><use href="#i-pen"/></svg>Arte da papelaria</li>
-      <li class="plus"><svg class="ico"><use href="#i-print"/></svg>500 impressos</li>
-      <li class="plus full"><svg class="ico"><use href="#i-truck"/></svg>Frete grátis para todo o Brasil</li>
-    </ul>
+  <div class="t-label sp-64">Tudo do Completo +</div>
+  <div class="cols sp-24">
+    <div class="row"><svg class="ico"><use href="#i-pen"/></svg><span class="t-strong">Arte da papelaria</span></div>
+    <div class="row"><svg class="ico"><use href="#i-print"/></svg><span class="t-strong">500 impressos</span></div>
+    <div class="row full"><svg class="ico"><use href="#i-truck"/></svg><span class="t-strong">Frete grátis para todo o Brasil</span></div>
   </div>
-  <div class="choose">
-    <div class="k">Você escolhe 1 item</div>
-    <div class="opt"><svg class="ico"><use href="#i-card"/></svg><div><b>Cartão de visita ou fidelidade</b><span>Frente e verso colorido · laminação brilho · 9 × 4,8 cm</span></div></div>
-    <div class="opt"><svg class="ico"><use href="#i-tag"/></svg><div><b>Tags para roupas</b><span>Frente e verso colorido · laminação brilho · com furo · 9 × 4,8 cm</span></div></div>
-    <div class="opt"><svg class="ico"><use href="#i-sticker"/></svg><div><b>Adesivos</b><span>Tamanho e acabamento padrão</span></div></div>
-    <p class="fine">* Corte especial ou outro acabamento: consulte o valor adicional.</p>
+  <div class="t-label sp-64">Você escolhe 1 item</div>
+  <div class="rows sp-24">
+    <div class="row"><svg class="ico"><use href="#i-card"/></svg><div class="txt"><div class="t-strong">Cartão de visita ou fidelidade</div><div class="t-body">Frente e verso colorido, laminação brilho, 9 × 4,8 cm</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-tag"/></svg><div class="txt"><div class="t-strong">Tags para roupas</div><div class="t-body">Frente e verso colorido, laminação brilho, com furo, 9 × 4,8 cm</div></div></div>
+    <div class="row"><svg class="ico"><use href="#i-sticker"/></svg><div class="txt"><div class="t-strong">Adesivos</div><div class="t-body">Tamanho e acabamento padrão</div></div></div>
+  </div>
+  <p class="t-note sp-24">* Corte especial ou outro acabamento: consulte o valor adicional.</p>
+</section>
+
+<!-- ======================= CONDIÇÕES ======================= -->
+<section class="bg-white">
+  <div class="t-label">Pagamento e prazo</div>
+  <div class="t-h2 sp-24">o que você precisa saber</div>
+  <div class="rows sp-64">
+    <div class="fact"><div class="t-price">5<small>%</small></div><div><div class="t-strong">de desconto</div><div class="t-body">no Pix, transferência ou boleto. No cartão de crédito, valor integral.</div></div></div>
+    <div class="fact"><div class="t-price">12</div><div><div class="t-strong">dias úteis</div><div class="t-body">contados após o briefing. Alterações podem estender o prazo.</div></div></div>
+    <div class="fact"><div class="t-price">5</div><div><div class="t-strong">dias corridos</div><div class="t-body">com urgência, acréscimo de R$ 180.</div></div></div>
   </div>
 </section>
 
-<!-- ================= CONDIÇÕES ================= -->
-<section class="cond pad">
-  <div class="label">Pagamento e prazo</div>
-  <div class="display">O que você precisa saber</div>
-  <div class="facts">
-    <div class="fact wide"><div class="n">5<small>%</small></div><b>de desconto no Pix, transferência ou boleto</b><span>No cartão de crédito, o valor é o integral do pacote.</span></div>
-    <div class="fact"><div class="n">12</div><b>dias úteis</b><span>após o briefing · alterações podem estender o prazo</span></div>
-    <div class="fact"><div class="n">5</div><b>dias corridos</b><span>com urgência · acréscimo de R$ 180</span></div>
+<!-- ======================= PROCESSO ======================= -->
+<section>
+  <div class="t-label">Passo a passo</div>
+  <div class="t-h2 sp-24">do “sim” à marca pronta</div>
+  <div class="rows sp-64">
+    <div class="step"><span class="t-label">01</span><div><div class="t-strong">Escolha o pacote</div><div class="t-body">Me conte qual faz sentido para você.</div></div></div>
+    <div class="step"><span class="t-label">02</span><div><div class="t-strong">Leia os termos</div><div class="t-body">Tudo combinado antes de começar.</div></div></div>
+    <div class="step"><span class="t-label">03</span><div><div class="t-strong">Pagamento</div><div class="t-body">Sua vaga na agenda fica garantida.</div></div></div>
+    <div class="step"><span class="t-label">04</span><div><div class="t-strong">Briefing</div><div class="t-body">Você me conta sobre a sua marca.</div></div></div>
+    <div class="step"><span class="t-label">05</span><div><div class="t-strong">Criação</div><div class="t-body">Começo o projeto — o prazo conta daqui.</div></div></div>
+    <div class="step"><span class="t-label">06</span><div><div class="t-strong">Entrega</div><div class="t-body">Sua marca pronta, com todos os arquivos.</div></div></div>
   </div>
 </section>
 
-<!-- ================= PROCESSO ================= -->
-<section class="proc pad">
-  <div class="label">Passo a passo</div>
-  <div class="display">Do “sim” à marca pronta</div>
-  <div class="steps">
-    <div class="s"><div class="n">01</div><b>Escolha</b><span>Você escolhe o seu pacote</span></div>
-    <div class="s"><div class="n">02</div><b>Termos</b><span>Tudo combinado antes de começar</span></div>
-    <div class="s"><div class="n">03</div><b>Pagamento</b><span>Sua vaga na agenda fica garantida</span></div>
-    <div class="s"><div class="n">04</div><b>Briefing</b><span>Você me conta sobre a sua marca</span></div>
-    <div class="s"><div class="n">05</div><b>Criação</b><span>Começo o projeto — o prazo conta daqui</span></div>
-    <div class="s"><div class="n">06</div><b>Entrega</b><span>Sua marca pronta, com todos os arquivos</span></div>
-  </div>
-</section>
-
-<!-- ================= FECHAMENTO ================= -->
-<div class="end-img"></div>
-<section class="end pad">
-  <div class="display">vamos criar a sua marca?</div>
-  <p class="body">Escolha o seu pacote e me chame — é só tocar abaixo.</p>
-  <a class="cta" href="https://wa.me/5511969288192">chamar no WhatsApp <span>→</span></a>
-  <div class="contact">
-    <a href="https://wa.me/5511969288192"><span>WhatsApp</span>(11) 96928-8192 ↗</a>
-    <a href="https://instagram.com/laisamaraldesigner"><span>Instagram</span>@laisamaraldesigner ↗</a>
+<!-- ======================= FECHAMENTO ======================= -->
+<img src="marca/mockup-la.jpg" alt="LA">
+<section style="padding-top:0">
+  <div class="t-h2 center">vamos criar a sua marca?</div>
+  <p class="t-body sp-32 center">Escolha o seu pacote e me chame.</p>
+  <a class="cta sp-64" href="https://wa.me/5511969288192">Chamar no WhatsApp <span>→</span></a>
+  <div class="rows sp-64">
+    <a class="row" href="https://wa.me/5511969288192"><svg class="ico"><use href="#i-wa"/></svg><span class="t-strong txt">(11) 96928-8192</span><span class="t-label">WhatsApp ↗</span></a>
+    <a class="row" href="https://instagram.com/laisamaraldesigner"><svg class="ico"><use href="#i-ig"/></svg><span class="t-strong txt">@laisamaraldesigner</span><span class="t-label">Instagram ↗</span></a>
   </div>
 </section>
 
