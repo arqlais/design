@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Orçamento 2026 · Lais Amaral</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Italiana&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
 <style>
 /* ==========================================================
    LAIS AMARAL · PROPOSTA 2026
@@ -22,7 +22,7 @@
   --black:#1C1C1C; --rose:#CAABA3; --off:#F6F3F1; --white:#FFFFFF;
   --rose-d:#9E7C74;   /* rosé fechado, só para etiquetas pequenas */
   --grey:#6B6461; --hair:#DED3CF;
-  --display:'Quotesa','Italiana',serif;
+  --display:'Marcellus',serif;
   --m:80px;           /* margem lateral */
 }
 *{ box-sizing:border-box; margin:0; padding:0 }
@@ -31,15 +31,15 @@ body{ font-family:'Montserrat',sans-serif; color:var(--black); -webkit-print-col
 img{ display:block; width:100%; height:auto }   /* imagens sempre inteiras: sem corte e sem distorção */
 a{ color:inherit; text-decoration:none }
 
-.t-label{ font-size:22px; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--rose-d); line-height:1.4 }
-.t-body { font-size:30px; font-weight:400; line-height:1.55; color:var(--grey) }
-.t-strong{ font-size:30px; font-weight:600; line-height:1.4; color:var(--black) }
-.t-h2   { font-family:var(--display); font-weight:400; font-size:88px; line-height:1.05; text-transform:lowercase }
-.t-h1   { font-family:var(--display); font-weight:400; font-size:120px; line-height:1; text-transform:lowercase }
-.t-price{ font-size:120px; font-weight:200; line-height:1; letter-spacing:-.02em; white-space:nowrap }
-.t-note { font-size:24px; line-height:1.5; color:var(--grey) }
+.t-label{ font-size:21px; font-weight:600; letter-spacing:.3em; text-transform:uppercase; color:var(--rose-d); line-height:1.4 }
+.t-body { font-size:28px; font-weight:400; line-height:1.55; color:var(--grey) }
+.t-strong{ font-size:28px; font-weight:500; line-height:1.4; color:var(--black) }
+.t-h2   { font-family:var(--display); font-weight:400; font-size:60px; line-height:1.15; text-transform:lowercase }
+.t-h1   { font-family:var(--display); font-weight:400; font-size:76px; line-height:1.05; text-transform:lowercase }
+.t-price{ font-size:72px; font-weight:400; line-height:1; letter-spacing:-.01em; white-space:nowrap }
+.t-note { font-size:22px; line-height:1.5; color:var(--grey) }
 
-section{ padding:120px var(--m) }
+section{ padding:110px var(--m) }
 .bg-white{ background:var(--white) }
 .bg-rose{ background:var(--rose) }
 .sp-24{ margin-top:24px } .sp-32{ margin-top:32px } .sp-64{ margin-top:64px }
@@ -58,30 +58,54 @@ section{ padding:120px var(--m) }
 
 /* resumo de preços */
 .menu .row{ justify-content:space-between }
-.menu .p{ font-size:30px; white-space:nowrap }
+.menu .p{ font-size:28px; white-space:nowrap }
 .menu .p s{ color:var(--grey); margin-right:12px }
-.badge{ display:inline-block; font-size:22px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; padding:8px 14px; background:var(--black); color:var(--off); margin-left:14px; vertical-align:middle; line-height:1.2 }
+.badge{ display:inline-block; font-size:18px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; padding:8px 14px; background:var(--black); color:var(--off); margin-left:14px; vertical-align:middle; line-height:1.2 }
 .badge.line{ background:none; color:var(--black); box-shadow:inset 0 0 0 1.5px var(--black) }
 
 /* bloco de preço */
 .price{ display:flex; justify-content:space-between; align-items:flex-end; padding:40px 0; border-top:1.5px solid var(--black); border-bottom:1.5px solid var(--black) }
-.price .cur{ font-size:30px; font-weight:400; letter-spacing:0; vertical-align:top; margin-right:10px }
+.price .cur{ font-size:26px; font-weight:500; letter-spacing:0; vertical-align:top; margin-right:10px }
 .price .pix{ text-align:right }
 .price .pix .t-strong{ margin-top:6px }
 .was{ text-decoration:line-through; margin-bottom:8px }
 
 /* números grandes (condições) */
 .fact{ display:flex; gap:40px; align-items:center; padding:40px 0; border-bottom:1px solid var(--hair) }
-.fact .t-price{ width:220px; flex:none; color:var(--rose-d) }
-.fact .t-price small{ font-size:30px; font-weight:400; letter-spacing:0; margin-left:4px }
+.fact .t-price{ width:160px; flex:none; color:var(--rose-d) }
+.fact .t-price small{ font-size:28px; font-weight:400; letter-spacing:0; margin-left:4px }
 
 /* passo a passo */
 .step{ display:flex; gap:28px; align-items:baseline; padding:30px 0; border-bottom:1px solid var(--hair) }
 .step .t-label{ width:60px; flex:none }
 
 /* botão e contatos */
-.cta{ display:block; text-align:center; background:var(--black); color:var(--off); font-size:30px; font-weight:600; letter-spacing:.04em; padding:36px; border-radius:999px }
+.cta{ display:block; text-align:center; background:var(--black); color:var(--off); font-size:28px; font-weight:500; letter-spacing:.04em; padding:36px; border-radius:999px }
 .cta span{ color:var(--rose) }
+
+
+/* ---------- vitrines de mockup (imagem inteira, sem corte) ---------- */
+.show{ padding:110px var(--m) 130px; position:relative }
+.show.rose{ background:var(--rose) } .show.white{ background:var(--white) }
+.show .t-label{ margin-bottom:56px }
+.show.rose .t-label{ color:var(--black) }
+.fr{ position:relative; margin-right:28px }
+.fr::before{ content:""; position:absolute; left:28px; top:28px; right:-28px; bottom:-28px; border:1.5px solid var(--black); border-radius:26px }
+.fr img{ position:relative; border-radius:26px; box-shadow:0 40px 70px -36px rgba(28,28,28,.55) }
+.pin{ position:absolute; display:flex; align-items:center; transform:translate(-9px,-50%); z-index:2 }
+.pin.l{ flex-direction:row-reverse; transform:translate(calc(-100% + 9px),-50%) }
+.pin i{ width:18px; height:18px; border-radius:50%; background:var(--black); box-shadow:0 0 0 5px rgba(255,255,255,.85); flex:none }
+.pin b{ width:56px; height:1.5px; background:var(--black) }
+.pin span{ background:var(--white); padding:10px 16px; font-size:19px; font-weight:600; letter-spacing:.2em; text-transform:uppercase; white-space:nowrap }
+.dot{ position:absolute; width:44px; height:44px; margin:-22px 0 0 -22px; border-radius:50%; background:var(--black); color:var(--white); font-size:20px; font-weight:600; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 5px rgba(255,255,255,.9); z-index:2 }
+.legend{ display:flex; flex-wrap:wrap; gap:18px 40px; margin-top:76px }
+.legend span{ display:flex; align-items:center; gap:14px; font-size:28px; font-weight:500 }
+.legend i{ font-style:normal; width:40px; height:40px; border-radius:50%; background:var(--black); color:var(--white); font-size:18px; font-weight:600; display:flex; align-items:center; justify-content:center }
+.collage + .legend{ margin-top:30px }
+.collage{ position:relative; height:890px }
+.collage .a{ position:absolute; left:0; top:0; width:800px }
+.collage .b{ position:absolute; right:-10px; top:520px; width:520px; transform:rotate(4deg); border:12px solid var(--white); border-radius:6px; box-shadow:0 40px 70px -30px rgba(28,28,28,.55) }
+.collage .a img{ border-radius:26px; box-shadow:0 40px 70px -36px rgba(28,28,28,.45) }
 
 /* ---------- vitrine do pacote instagram (ilustração em código) ---------- */
 .ig{ display:flex; justify-content:center; gap:48px; padding:100px 0 0 }
@@ -108,13 +132,13 @@ section{ padding:120px var(--m) }
 .tile.fr::after{ content:""; position:absolute; inset:8px; border:1.5px solid rgba(28,28,28,.3) }
 .tile.frw::after{ content:""; position:absolute; inset:8px; border:1.5px solid rgba(255,255,255,.75) }
 .tile img{ width:28% }
-.tile em{ font-family:var(--display); font-style:normal; font-size:20px; text-align:center; line-height:1.1 }
+.tile em{ font-family:var(--display); font-style:normal; font-size:17px; text-align:center; line-height:1.1 }
 .story{ height:100%; background:var(--off); position:relative }
 .bars{ position:absolute; top:56px; left:20px; right:20px; display:flex; gap:6px }
 .bars i{ flex:1; height:3px; border-radius:2px; background:rgba(28,28,28,.2) } .bars i:first-child{ background:var(--black) }
 .sfr{ position:absolute; inset:90px 26px 40px; border:1.5px solid var(--rose); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px; text-align:center }
 .sfr img{ width:110px }
-.sfr em{ font-family:var(--display); font-style:normal; font-size:44px; line-height:1.1 }
+.sfr em{ font-family:var(--display); font-style:normal; font-size:36px; line-height:1.1 }
 .sfr span{ font-size:14px; letter-spacing:.3em; text-transform:uppercase; color:var(--rose-d); font-weight:600 }
 .dev .t-label{ text-align:center; margin-top:28px; color:var(--black) }
 </style>
@@ -159,7 +183,7 @@ section{ padding:120px var(--m) }
 </section>
 
 <!-- ======================= PROJETO ======================= -->
-<img src="marca/verbenna-cosmeticos.jpg" alt="Projeto Verbenna">
+<div class="show rose"><div class="t-label">Projeto · Verbenna cosméticos</div><div class="fr"><img src="marca/verbenna-cosmeticos.jpg" alt="Projeto Verbenna"><div class="dot" style="left:33%;top:22%">1</div><div class="dot" style="left:39%;top:83%">2</div><div class="dot" style="left:47%;top:73%">3</div></div><div class="legend"><span><i>1</i>pattern</span><span><i>2</i>logotipo</span><span><i>3</i>ícone</span></div></div>
 
 <!-- ======================= ITENS ======================= -->
 <section>
@@ -191,7 +215,7 @@ section{ padding:120px var(--m) }
 </section>
 
 <!-- ======================= 01 BÁSICO ======================= -->
-<img src="marca/chocolate.jpg" alt="Projeto embalagem de chocolate">
+<div class="show white"><div class="t-label">Projeto · Embalagem</div><div class="fr"><img src="marca/chocolate.jpg" alt="Projeto embalagem de chocolate"><div class="dot" style="left:63%;top:40%">1</div><div class="dot" style="left:25%;top:66%">2</div></div><div class="legend"><span><i>1</i>logotipo</span><span><i>2</i>pattern</span></div></div>
 <section>
   <div class="t-label">Pacote 01</div>
   <div class="t-h1 sp-24">básico</div>
@@ -213,7 +237,7 @@ section{ padding:120px var(--m) }
 </section>
 
 <!-- ======================= 02 COMPLETO ======================= -->
-<img src="marca/verbenna-cartoes.jpg" alt="Projeto Verbenna, cartões">
+<div class="show rose"><div class="t-label">Projeto · Verbenna cartões</div><div class="fr"><img src="marca/verbenna-cartoes.jpg" alt="Projeto Verbenna, cartões"><div class="dot" style="left:34%;top:38%">1</div><div class="dot" style="left:42%;top:62%">2</div></div><div class="legend"><span><i>1</i>logotipo</span><span><i>2</i>ícone</span></div></div>
 <section class="bg-white">
   <div class="t-label">Pacote 02</div>
   <div class="t-h1 sp-24">completo</div>
@@ -294,9 +318,12 @@ section{ padding:120px var(--m) }
 </section>
 
 <!-- ======================= 04 PAPELARIA ======================= -->
-<img src="marca/cartoes-rayanne.jpg" alt="Projeto cartões de visita">
-<div class="gap"></div>
-<img src="marca/tag-closet.jpg" alt="Projeto tag">
+<div class="show rose"><div class="t-label">Projetos · Cartões e tags</div>
+  <div class="collage">
+    <div class="a"><img src="marca/cartoes-rayanne.jpg" alt="Cartões de visita"><div class="dot" style="left:46%;top:27%">1</div><div class="dot" style="left:77%;top:62%">2</div></div>
+    <img class="b" src="marca/tag-closet.jpg" alt="Tag para roupas">
+  </div>
+<div class="legend"><span><i>1</i>logotipo</span><span><i>2</i>submarca</span></div></div>
 <section>
   <div class="t-label">Pacote 04</div>
   <div class="t-h1 sp-24">papelaria</div>
