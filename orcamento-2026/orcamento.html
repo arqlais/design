@@ -46,11 +46,11 @@
   .flower{ width:30px; height:30px; color:var(--rose) }
 
   /* ===== capa ===== */
-  .hero .body{ height:640px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative }
+  .hero .body{ background:#F6F3F1 url(marca/mockup-lais.jpg) center 46%/cover no-repeat; height:760px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative }
   .hero .logo{ width:620px; position:relative }
   .hero h1{ font-weight:300; font-size:72px; letter-spacing:.22em; margin-right:-.22em; color:var(--ink) }
   .hero .flower{ margin-top:30px }
-  .hero .sub{ margin-top:26px; font-size:16px; letter-spacing:.5em; margin-right:-.5em; text-transform:uppercase; color:var(--muted) }
+  .hero .sub{ position:absolute; bottom:96px; left:0; right:0; font-size:16px; letter-spacing:.5em; margin-right:-.5em; text-transform:uppercase; color:var(--muted) }
   .hero .year{ position:absolute; bottom:44px; left:0; right:0; font-family:var(--display); font-size:24px; color:var(--brown) }
   .hero .arch{ position:absolute; top:-2px; left:50%; transform:translateX(-50%); width:820px; height:560px; border:1.5px solid var(--rose-l); border-top:none; border-radius:0 0 410px 410px }
   .strip{ background:var(--blush); border-top:1.5px solid var(--brown); padding:20px; text-align:center; font-size:17px; letter-spacing:.32em; color:var(--brown) }
@@ -145,8 +145,10 @@
   .steps span{ display:block; margin-top:8px; font-size:16px; line-height:1.55; color:var(--text); padding:0 8px }
 
   /* ===== fechamento ===== */
-  .end .body{ background:var(--brown); text-align:center; padding:70px 64px }
-  .end .serif{ font-size:46px; color:#FBF3F1; line-height:1.35 }
+  .end .body{ padding:0; display:grid; grid-template-columns:1fr 1fr; min-height:470px }
+  .end .pic{ background:#F6F3F1 url(marca/mockup-la.jpg) center/cover no-repeat; border-right:1.5px solid var(--brown) }
+  .end .txt{ background:var(--brown); display:flex; flex-direction:column; justify-content:center; padding:50px 54px }
+  .end .serif{ font-size:40px; color:#FBF3F1; line-height:1.35 }
   .end p{ color:#E2D2CC; margin-top:20px }
   .foot{ display:flex; justify-content:space-between; border:1.5px solid var(--brown); background:#fff; padding:18px 30px; font-size:17px; letter-spacing:.14em; color:var(--brown) }
 </style>
@@ -162,9 +164,7 @@
 <div class="win hero">
   <div class="bar">orçamento</div>
   <div class="body">
-    <div class="arch"></div>
-    <img class="logo" src="marca/logo.png" alt="Lais Amaral">
-    <div class="sub">Design de marcas</div>
+    <div class="sub">Lais Amaral · design de marcas</div>
     <div class="year">proposta 2026</div>
   </div>
   <div class="strip">identidade visual</div>
@@ -380,9 +380,11 @@
 <div class="win end">
   <div class="bar">vamos começar?</div>
   <div class="body">
-    <img src="marca/monograma-branco.png" alt="LA" style="height:150px;margin-bottom:40px">
-    <div class="serif">Vamos criar a marca<br>que você merece?</div>
-    <p>Escolha o seu pacote e me chame — é só responder a esta mensagem.</p>
+    <div class="pic"></div>
+    <div class="txt">
+      <div class="serif">Vamos criar a marca<br>que você merece?</div>
+      <p>Escolha o seu pacote e me chame — é só responder a esta mensagem.</p>
+    </div>
   </div>
 </div>
 
